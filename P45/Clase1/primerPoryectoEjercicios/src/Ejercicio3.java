@@ -29,7 +29,7 @@ public class Ejercicio3 {
             System.out.println("El número "+numero+" es par");
         }else{
             //Reportar en pantalla
-            System.out.println("El número "+numero+" es impar4");
+            System.out.println("El número "+numero+" es impar");
         }        
         
         //No es neceario cierre para versiones relativamente recientes el cierre
