@@ -1,0 +1,21 @@
+-->Orden de instalación sugerido
+1. Tener VSCode instalado (Ciclo1)
+2. Instalar el OpenJDK (11 LTS -> Todo por defecto)
+3. En VScode instalar la extensión Java Extension Pack (Minimalistas de Maven)
+Tarea de Instalaciones
+4. Hacer cuenta en GitHub e instalar Git. (Enlaces de las diapositivas)
+5. Instalar Maven en el sistema oeprativo. (Enlaces de las diapositivas)
+
+
+Enlaces de Interés (Revisar las diapositivas de iMaster)
+
+-> Instalación de OpenJDK:
+Sitio fuente: https://adoptopenjdk.net/installation.html
+Video de ayuda: https://www.youtube.com/watch?v=g6TMxG1xTzU
+
+-> Aplicación para diagramas (modelos):
+https://app.diagrams.net/
+
+-> Bases de Datos:
+Motor base de datos embebida ->  https://www.sqlite.org/ 
+Herramienta de gestión -> DBeaver Community https://dbeaver.io/
