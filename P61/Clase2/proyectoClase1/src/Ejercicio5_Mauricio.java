@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class Ejercicio5_Mauricio {
 
     public static void main(String[] args) {
@@ -14,6 +16,13 @@ public class Ejercicio5_Mauricio {
     
     public static String verificacion(int numero) {
         String result = (numero%2 == 0 ) ? "Par." : "Impar.";
+
+        //Equivalente a la línea anterior
+        // if(numero%2 == 0){
+        //     result = "Par.";
+        // }else{
+        //     result = "Impar.";
+        // }
                     
         return result;
     }

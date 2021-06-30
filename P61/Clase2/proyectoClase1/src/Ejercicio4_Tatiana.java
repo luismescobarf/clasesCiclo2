@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class Ejercicio4_Tatiana {
 
     public static void main(String[] args){
