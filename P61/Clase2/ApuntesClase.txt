@@ -1,12 +1,10 @@
--> Dudas:
-1) Tengo dos preguntas ¿Cuál es el papel de nextInt()? 
-                    ¿Por qué es necesario darle cierre a la instancia de scanner con close()?
-2) Profe tengo una duda, en el ejercicio dos, ¿porqué se hace división entera en el while?
-3) como puedo retornar algo que esta dentro del for?, si el return tiene que estar por fuera :/ y no reconoce las variables que estan dentro del for(){}
-4) cómo se conectan los dos bloques de código del ejercicio 3, es decir el public static 1 y 2
-5) por que se le agrega ++ a numCifras?
-6) Cuando se usa Scanner sc = new Scanner(System.in);  sirve para recibir varias entradas de la terminal ?
-7) Los argumentos del main()
+Itinerario
+----------
+- Mirar ejercicios básicos -> Familiarizando sintaxis de Java
+- Proyecto con asistencia de Maven -> Familiarizarnos con clases útiles (Strings)
+*- Git y GitHub -> (Opcional)
+*- Empezar a hablar de objetos -> - Tres en raya, - Requerimiento de notas
+
 
 
 
