@@ -91,7 +91,7 @@ public class Ejercicio3 {
         // 4) Presentar resultados en pantalla
         //System.out.println("El doble es: "+doble+" El triple es: "+triple);
         reportarResultado(doble, triple);
-
+        
     }
     
 }
