@@ -27,7 +27,10 @@ public class Ejercicio2 {
             // numCifras = numCifras + 1;
             // numCifras += 1;
             // ++numCifras;
-            numCifras++;            
+            numCifras++;
+            
+            
+
         }
 
         // //Daniel Alfaro
@@ -47,7 +50,9 @@ public class Ejercicio2 {
         //Recolección del número por teclado
         Scanner sc = new Scanner(System.in);
         System.out.println("Ingrese un número: ");
-        int numero = sc.nextInt();
+        int numero = sc.nextInt();  
+
+        
 
         //Lógica (Algoritmo)
         int numeroCifras = numeroCifras(numero);

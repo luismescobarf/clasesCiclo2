@@ -1,21 +1,14 @@
--->Orden de instalación sugerido
-1. Tener VSCode instalado (Ciclo1)
-2. Instalar el OpenJDK (11 LTS -> Todo por defecto)
-3. En VScode instalar la extensión Java Extension Pack (Minimalistas de Maven)
-Tarea de Instalaciones
-4. Hacer cuenta en GitHub e instalar Git. (Enlaces de las diapositivas)
-5. Instalar Maven en el sistema oeprativo. (Enlaces de las diapositivas)
+-> Dudas:
+1) Tengo dos preguntas ¿Cuál es el papel de nextInt()? 
+                    ¿Por qué es necesario darle cierre a la instancia de scanner con close()?
+2) Profe tengo una duda, en el ejercicio dos, ¿porqué se hace división entera en el while?
+3) como puedo retornar algo que esta dentro del for?, si el return tiene que estar por fuera :/ y no reconoce las variables que estan dentro del for(){}
+4) cómo se conectan los dos bloques de código del ejercicio 3, es decir el public static 1 y 2
+5) por que se le agrega ++ a numCifras?
+6) Cuando se usa Scanner sc = new Scanner(System.in);  sirve para recibir varias entradas de la terminal ?
+7) Los argumentos del main()
 
 
-Enlaces de Interés (Revisar las diapositivas de iMaster)
 
--> Instalación de OpenJDK:
-Sitio fuente: https://adoptopenjdk.net/installation.html
-Video de ayuda: https://www.youtube.com/watch?v=g6TMxG1xTzU
 
--> Aplicación para diagramas (modelos):
-https://app.diagrams.net/
 
--> Bases de Datos:
-Motor base de datos embebida ->  https://www.sqlite.org/ 
-Herramienta de gestión -> DBeaver Community https://dbeaver.io/
