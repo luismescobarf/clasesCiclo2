@@ -27,10 +27,23 @@ public class Ejercicio1 {
         int valorMes = Integer.parseInt(arregloFecha[1]);
         int valorAño = Integer.parseInt(arregloFecha[2]);
 
-        //Salida de prueba
-        System.out.println(valorDia);
-        System.out.println(valorMes);
-        System.out.println(valorAño);
+        // //Salida de prueba
+        // System.out.println(valorDia);
+        // System.out.println(valorMes);
+        // System.out.println(valorAño);
+
+        //4) Sumar los pedazos y almacenarlos
+        int sumatoriaPartesFecha = valorDia + valorMes + valorAño;
+
+        //5) De la sumatoria extraer las cifras
+        //6) Sumar las cifras y retornar el número de la suerte
+
+        //Conversión de tipos
+        String sumatoriaCadena = Integer.toString(sumatoriaPartesFecha);        
+        for (int i = 0; i < sumatoriaCadena.length(); i++) {
+            numeroSuerte += Character.getNumericValue(sumatoriaCadena.charAt(i));             
+        }
+
         
         //Retornar el resultado
         return numeroSuerte;
@@ -63,8 +76,10 @@ public class Ejercicio1 {
 
         //Llamados para el funcionamiento de la aplicación
         saludo();       
-        obtenerNumeroSuerte(leerFecha());
+        reportarNumeroSuerte(obtenerNumeroSuerte(leerFecha()));
         
+
+
     }
 
     
