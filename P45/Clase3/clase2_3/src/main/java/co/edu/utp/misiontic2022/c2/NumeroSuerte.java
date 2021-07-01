@@ -27,7 +27,12 @@ public class NumeroSuerte {
         Scanner lector = new Scanner(System.in);
         String fecha;
         fecha = lector.nextLine();
+        lector.close();
         return fecha;
+    }
+
+    public static void presentarResultado(int numeroSuerte){
+        System.out.println("El número de la suerte es: "+numeroSuerte);
     }
 
     //Lógica
@@ -51,14 +56,34 @@ public class NumeroSuerte {
         int sumaPartes = valorDias + valorMeses + valorAño;
 
         //5) Separamos las cifras del número
+        String sumaTexto = sumaPartes + "";
+
         //6) Sumamos las cifras del número del paso cinco
+
+        // //Guía con el equivalente de Python
+        // sumatoriaCifras = 0
+        // for i in range(len(sumaTexto)):
+        //     sumatoriaCifras += sumaTexto[i]
+
+        int sumatoriaCifras = 0;
+        for (int i = 0; i < sumaTexto.length(); i++) {         
+            //Sumatoria genérica
+            sumatoriaCifras = sumatoriaCifras + Character.getNumericValue( sumaTexto.charAt(i) );             
+            //Forma resumida sumatoria
+            //sumatoriaCifras += Character.getNumericValue( sumaTexto.charAt(i) );             
+        }
+
         //7) Retornamos el número de la suerte que es el resultado de la suma
+        return sumatoriaCifras;
 
     }
     
     public static void main(String[] args) {
+        
         //Donde se va a ejecutar (sección principal)
         //Equivalente en Python a lo que está pegado a la margen izquierda
+        presentarResultado(numeroSuerte(leerFecha()));
+
     }
 
 }
