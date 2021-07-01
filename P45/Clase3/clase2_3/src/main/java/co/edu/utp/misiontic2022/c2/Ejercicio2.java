@@ -61,7 +61,9 @@ public class Ejercicio2 {
 
     public static void main(String[] args) {
 
-
+        //Ejecución
+        int[] infoProducto = leerInfoProducto();
+        presentarPrecioVenta(calcularPrecioVenta(infoProducto[0], infoProducto[1]));
         
         
     }
