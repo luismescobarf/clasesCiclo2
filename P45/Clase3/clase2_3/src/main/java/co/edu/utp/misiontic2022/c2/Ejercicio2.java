@@ -1,5 +1,7 @@
 package co.edu.utp.misiontic2022.c2;
 
+import java.util.Scanner;
+
 public class Ejercicio2 {
     
     //Ejemplo de constante
@@ -12,20 +14,37 @@ public class Ejercicio2 {
     // el número de productos vendidos y el porcentaje de IVA aplicado. 
     // Los datos anteriores se leerán por teclado.
 
+    //Interacción
+
     //Función que recoge precio de venta y cantidad del producto
     public static int[] leerInfoProducto(){
 
-        //
+        //Arreglo que recibe información
+        int[] arregloInfoProducto = new int[2];
 
-        System.out.println("App del Número de la Suerte");
-        System.out.println("Ingrese la fecha: ");
+        //Construcción del scanner
         Scanner lector = new Scanner(System.in);
-        String fecha;
-        fecha = lector.nextLine();
+
+        //Recoger precio del producto        
+        System.out.println("Ingrese el precio del producto->  ");
+        arregloInfoProducto[0] = lector.nextInt();
         
+        //Recoger cantidad del producto
+        System.out.println("Ingrese la cantidad del producto->  ");
+        arregloInfoProducto[1] = lector.nextInt();
+        
+        //Cierre del scanner (no es obligatorio)
         lector.close();
-        return fecha;
+
+        //Retornamos la información coleccionada en un arreglo (lista Python rígida)
+        return arregloInfoProducto;
     }
+
+    public static void presentarPrecioVenta(double precioVentaFinal){
+        System.out.println("--- El precio con IVA es: "+precioVentaFinal+" ----");
+    }
+
+    //Lógica
 
     public static double calcularPrecioVenta(int precioUnidad, int cantidad){        
         
