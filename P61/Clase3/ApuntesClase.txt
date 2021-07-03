@@ -1,0 +1,12 @@
+Itinerario
+----------
+- Mirar ejercicios básicos -> Familiarizando sintaxis de Java
+- Proyecto con asistencia de Maven -> Familiarizarnos con clases útiles (Strings)
+*- Git y GitHub -> (Opcional)
+*- Empezar a hablar de objetos -> - Tres en raya, - Requerimiento de notas
+
+
+
+
+
+
