@@ -1,9 +1,9 @@
 Itinerario
 ----------
-- Mirar ejercicios básicos -> Familiarizando sintaxis de Java
-- Proyecto con asistencia de Maven -> Familiarizarnos con clases útiles (Strings)
-*- Git y GitHub -> (Opcional)
-*- Empezar a hablar de objetos -> - Tres en raya, - Requerimiento de notas
+- Completar la transformación de paradigma del requerimiento que fue satisfecho para 
+  el promedio ajustado de notas.
+- Expresando de una forma técnica y gráfica, la implementación del req. de notas -> UML.
+- Empezamos a diseñar/implementar Tres en Raya bajo PPOO.
 
 
 

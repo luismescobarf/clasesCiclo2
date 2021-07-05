@@ -5,6 +5,7 @@ public class Nota {
     //1) Atributos (antes variables que estaban sueltas)
     private int escala100;
     private double escala5;
+    //private double atributoPruebaFirma;//Análisis de choque de firmas 
     private String cualitativa;
     private String nombre;//Evaluación, taller, o reto correspondiente
 
@@ -17,7 +18,7 @@ public class Nota {
 
     Nota(int pEscala100){
         this.escala100 = pEscala100;
-        this.escala5 = pEscala100 / 20;
+        this.escala5 = (double)pEscala100 / 20;
         if(pEscala100 >= 60){
             this.cualitativa = "Aprobado";
         }else{
@@ -34,6 +35,21 @@ public class Nota {
             this.cualitativa = "Reprobado";
         }
     }
+
+    // //Alternativa con choque de firmas, un constructor que generaliza
+    // Nota(int a, int b, int modo){
+
+    //     if(modo == 1){
+
+    //     }else if(modo == 2){
+
+    //     }else if(modo == 3){
+
+    //     }else{
+
+    //     }
+
+    // }
 
     Nota(double pEscala5, int pEscala100, String pCualitativo){
         this.escala5 = pEscala5;
@@ -52,6 +68,24 @@ public class Nota {
         System.out.println("Cualitativa  -> " + this.cualitativa);
     }
 
+    //Conversión de notas que fueron creadas vacías y actualizadas parcialmente
+    public void convertirNota5_100(){
+        this.escala100 = (int)(this.escala5 * 20);
+    }
+
+    public void convertirNota100_5(){
+        this.escala5 = (double)this.escala100/20;
+    }
+
+    public void convertirNota100_Cualitativo(){
+        if(this.escala100 >= 60){
+            this.cualitativa = "Aprobado";
+        }else{
+            this.cualitativa = "Reprobado";
+        }
+    }
+
+    
     //4) Getters
     public String getCualitativa() {
         return cualitativa;
