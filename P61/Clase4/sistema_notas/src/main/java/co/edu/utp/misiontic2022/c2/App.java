@@ -7,25 +7,36 @@ package co.edu.utp.misiontic2022.c2;
 public class App {
     public static void main( String[] args ){
 
-        //Probar el comportamiento de Nota
-        Nota notaVacia = new Nota();
-        // System.out.println("NotaVacía");
-        // System.out.println("Valor Escala 5 -> " + notaVacia.getEscala5());
-        // System.out.println("Valor Escala 100 -> " + notaVacia.getEscala100());
-        // System.out.println("Cualitativa  -> " + notaVacia.getCualitativa());
-        System.out.println("Antes de actualizar uno de sus atributos");
-        notaVacia.mostrarNotaConsola();
 
-        //Actualizar la nota vacía
-        notaVacia.setEscala100(45);
-        System.out.println("Después de actualizar uno de sus atributos");
-        notaVacia.mostrarNotaConsola();
-        notaVacia.convertirNota100_5();
-        System.out.println("Después de utilizar uno de sus métodos (comportamiendo)");
-        notaVacia.mostrarNotaConsola();
-        notaVacia.convertirNota100_Cualitativo();
-        System.out.println("Habiendo utilizado todo el comportamiento");
-        notaVacia.mostrarNotaConsola();      
+        //Interactuar con la materia
+        Materia materia = new Materia(40,50,39,76,96);
+
+        //Utilizar el comportamiento de la materia
+        materia.calcularPromedioAjustado();
+        materia.calcularPromedio();
+
+        //Revisar cómo queda la materia después del proceso
+        materia.mostrarMateria();
+
+        // //Probar el comportamiento de Nota
+        // Nota notaVacia = new Nota();
+        // // System.out.println("NotaVacía");
+        // // System.out.println("Valor Escala 5 -> " + notaVacia.getEscala5());
+        // // System.out.println("Valor Escala 100 -> " + notaVacia.getEscala100());
+        // // System.out.println("Cualitativa  -> " + notaVacia.getCualitativa());
+        // System.out.println("Antes de actualizar uno de sus atributos");
+        // notaVacia.mostrarNotaConsola();
+
+        // //Actualizar la nota vacía
+        // notaVacia.setEscala100(45);
+        // System.out.println("Después de actualizar uno de sus atributos");
+        // notaVacia.mostrarNotaConsola();
+        // notaVacia.convertirNota100_5();
+        // System.out.println("Después de utilizar uno de sus métodos (comportamiendo)");
+        // notaVacia.mostrarNotaConsola();
+        // notaVacia.convertirNota100_Cualitativo();
+        // System.out.println("Habiendo utilizado todo el comportamiento");
+        // notaVacia.mostrarNotaConsola();      
 
 
         // Nota notaEscala5 = new Nota(4.4);
