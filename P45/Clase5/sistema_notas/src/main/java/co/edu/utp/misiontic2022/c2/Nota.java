@@ -127,7 +127,43 @@ public class Nota {
     }
 
     //2c)Getters -> Consultar los atributos de la clase.
+    public int getCodigo() {
+        return codigo;
+    }
+
+    public String getCualitativo() {
+        return cualitativo;
+    }
+
+    public int getEscala100() {
+        return escala100;
+    }
+
+    public double getEscala5() {
+        return escala5;
+    }
+    public String getNombre() {
+        return nombre;
+    }    
 
     //2d)Setters -> Actualizar los atributos de la clase.
-    
+    public void setCodigo(int codigo) {
+        this.codigo = codigo;
+    }
+
+    public void setCualitativo(String cualitativo) {
+        this.cualitativo = cualitativo;
+    }
+
+    public void setEscala100(int escala100) {
+        this.escala100 = escala100;
+    }
+
+    public void setEscala5(double escala5) {
+        this.escala5 = escala5;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
 }
