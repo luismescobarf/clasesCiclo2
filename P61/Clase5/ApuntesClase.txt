@@ -6,6 +6,11 @@ Qué hemos trabajado?
 Qué vamos a trabajar?
 - Incorporar las otras clases identificadas y establecer sus relaciones -> Asociaciones
 - Materia tenga una colección o número variable de notas (modificar)
+    -> Arreglos (especie de listas rígidas):
+        Utilizarlos cuando el tamaño no va a variar o cuando coleccionamos datos primitivos.
+    -> ArrayList (arreglos mutables):
+        Listas mutables, pero como en los arreglos todos los elementos son del mismo tipo.
+        Todos los tipos deben ser clases.
 - Crear un nuevo paquete -> Interfaz (menú, captura de info., interacción) para el usuario.
 
 Sesión siguiente:

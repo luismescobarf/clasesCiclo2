@@ -9,7 +9,7 @@ public class App {
 
         //Crear estudiante
         Estudiante estudianteRegistrado = new Estudiante(555666, "Tripulante MinTIC", "Buendía", 5, "F");
-        
+
         //Crear la materia
         //Materia materia = new Materia(40,50,39,76,96);
         Materia materia = new Materia(estudianteRegistrado,40,50,39,76,96);//Asociación
@@ -17,9 +17,27 @@ public class App {
         //Utilizar el comportamiento de la materia para resolver el requerimiento
         materia.calcularPromedioAjustado();
         materia.calcularPromedio();
+        materia.calcularMejorNota();
 
         //Revisar cómo queda la materia después del proceso
-        materia.mostrarMateria();
+        //materia.mostrarMateria();
+
+        //Revisar el atributo colección
+        System.out.println("&&&&&& Antes de agregar");
+        System.out.println("Promedio estático ->"+materia.getPromedio());
+        materia.calcularPromedio(1111);
+        System.out.println("Promedio colección ->"+materia.getPromedio());
+        //materia.mostrarColeccionNotas();
+
+        //Utilizar el nuevo comportamiento (adicionar notas)
+        materia.adicionarNota(77);
+
+        System.out.println("&&&&&& Después de agregar");
+        materia.calcularPromedio();
+        System.out.println("Promedio estático ->"+materia.getPromedio());
+        materia.calcularPromedio(22222);
+        System.out.println("Promedio colección ->"+materia.getPromedio());
+        //materia.mostrarColeccionNotas();
 
         // //Probar el comportamiento de Nota
         // Nota notaVacia = new Nota();

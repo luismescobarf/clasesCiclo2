@@ -1,5 +1,7 @@
 package co.edu.utp.misiontic2022.c2;
 
+import java.util.ArrayList;
+
 public class Materia {
     
     //Atributos
@@ -16,6 +18,8 @@ public class Materia {
     private Nota notaExcluida;
     private Nota mejorNota;
     private Estudiante estudianteCursando;//Asociación
+    private ArrayList<Nota> notasColeccion = new ArrayList<Nota>(); //Si queremos mutación de la colección
+    //private Nota[] notasArregloBasico; //Si va a estar fijo
 
     //Constructores
     Materia(){
@@ -46,6 +50,10 @@ public class Materia {
         this.nota5 = new Nota(pNota5_100);
         this.notaExcluida = new Nota();
         this.mejorNota = new Nota();
+
+        //Inicializar el atributo tipo colección        
+        this.coleccionarNotasEstaticas();
+
     }
 
     Materia(Estudiante pEstudianteCursando, int pNota1_100, int pNota2_100, int pNota3_100, int pNota4_100, int pNota5_100){        
@@ -62,9 +70,33 @@ public class Materia {
         this.notaExcluida = new Nota();
         this.mejorNota = new Nota();
         this.estudianteCursando = pEstudianteCursando;
+
+        //Inicializar el atributo tipo colección
+        this.coleccionarNotasEstaticas();
     }
 
     //Métodos generales
+    private void coleccionarNotasEstaticas(){
+        this.notasColeccion.add(this.nota1);
+        this.notasColeccion.add(this.nota2);
+        this.notasColeccion.add(this.nota3);
+        this.notasColeccion.add(this.nota4);
+        this.notasColeccion.add(this.nota5);
+    }
+
+    public void mostrarColeccionNotas(){    
+        System.out.println("Contenido del atributo que colecciona las notas");
+        for (Nota nota : notasColeccion) {
+            nota.mostrarNotaConsola();
+        }
+    }
+
+    public void adicionarNota(int pNota_100){
+        //Construir la nota a partir de la calificiación recibida
+        Nota notaRecibida = new Nota(pNota_100);
+        //Coleccionamos
+        this.notasColeccion.add(notaRecibida);
+    }
 
     public void mostrarMateria(){
         System.out.println("******************Materia*****************");
@@ -150,6 +182,15 @@ public class Materia {
         //Aprovechamos el comportamiento de la envoltura que hicimos al promedio
         this.promedioAjustado = notaPromedioAjustado.getEscala5();
 
+    }
+
+    //Calcular el promedio sobre la colección (mutable) de notas
+    public void calcularPromedio(int modo){//Cualquier valor entero indica promedio sobre colección
+        double sumatoria = 0;
+        for (Nota nota : notasColeccion) {
+            sumatoria += nota.getEscala5();
+        }
+        this.promedio = sumatoria/this.notasColeccion.size();
     }
 
     //Calcular el promedio sin ayudar al estudiante
