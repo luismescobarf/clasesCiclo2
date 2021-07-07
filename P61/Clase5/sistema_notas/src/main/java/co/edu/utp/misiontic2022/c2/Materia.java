@@ -15,6 +15,7 @@ public class Materia {
     private Nota nota5;
     private Nota notaExcluida;
     private Nota mejorNota;
+    private Estudiante estudianteCursando;//Asociación
 
     //Constructores
     Materia(){
@@ -47,6 +48,22 @@ public class Materia {
         this.mejorNota = new Nota();
     }
 
+    Materia(Estudiante pEstudianteCursando, int pNota1_100, int pNota2_100, int pNota3_100, int pNota4_100, int pNota5_100){        
+        this.nombre = "Sin nombre";
+        this.promedioAjustado = 0;
+        this.promedio = 0;
+        this.promedioCualitativo = "";
+        this.promedioCualitativoAjustado = "";
+        this.nota1 = new Nota(pNota1_100);
+        this.nota2 = new Nota(pNota2_100);
+        this.nota3 = new Nota(pNota3_100);
+        this.nota4 = new Nota(pNota4_100);
+        this.nota5 = new Nota(pNota5_100);
+        this.notaExcluida = new Nota();
+        this.mejorNota = new Nota();
+        this.estudianteCursando = pEstudianteCursando;
+    }
+
     //Métodos generales
 
     public void mostrarMateria(){
@@ -65,7 +82,8 @@ public class Materia {
         System.out.println("Promedio Ajustado -> "+this.promedioAjustado);
         System.out.println("Promedio Sin Ayuda -> "+this.promedio);
         System.out.println("Promedio Cualitativo Ajustado -> "+this.promedioCualitativoAjustado);
-        System.out.println("Promedio Cualitativo Sin Ayuda -> "+this.promedioCualitativo);       
+        System.out.println("Promedio Cualitativo Sin Ayuda -> "+this.promedioCualitativo);
+        this.estudianteCursando.mostrarInfoEstudiante();
 
     }
 

@@ -7,11 +7,14 @@ package co.edu.utp.misiontic2022.c2;
 public class App {
     public static void main( String[] args ){
 
+        //Crear estudiante
+        Estudiante estudianteRegistrado = new Estudiante(555666, "Tripulante MinTIC", "Buendía", 5, "F");
+        
+        //Crear la materia
+        //Materia materia = new Materia(40,50,39,76,96);
+        Materia materia = new Materia(estudianteRegistrado,40,50,39,76,96);//Asociación
 
-        //Interactuar con la materia
-        Materia materia = new Materia(40,50,39,76,96);
-
-        //Utilizar el comportamiento de la materia
+        //Utilizar el comportamiento de la materia para resolver el requerimiento
         materia.calcularPromedioAjustado();
         materia.calcularPromedio();
 

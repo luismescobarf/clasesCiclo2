@@ -1,9 +1,15 @@
 Itinerario
 ----------
-- Completar la transformación de paradigma del requerimiento que fue satisfecho para 
-  el promedio ajustado de notas.
-- Expresando de una forma técnica y gráfica, la implementación del req. de notas -> UML.
-- Empezamos a diseñar/implementar Tres en Raya bajo PPOO.
+Qué hemos trabajado?
+- Modelamos requerimiento de notas bajo POO -> Materia, Nota.
+- Se empiezan a puntualizar las relaciones entre las clases -> Composición
+Qué vamos a trabajar?
+- Incorporar las otras clases identificadas y establecer sus relaciones -> Asociaciones
+- Materia tenga una colección o número variable de notas (modificar)
+- Crear un nuevo paquete -> Interfaz (menú, captura de info., interacción) para el usuario.
+
+Sesión siguiente:
+-> Modelamiento de Tres en raya -> Herencia, Calses Abstractas ...
 
 
 
