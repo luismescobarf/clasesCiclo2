@@ -194,7 +194,7 @@ public class Materia {
     }
 
     //Calcular el promedio sin ayudar al estudiante
-    public void calcularPromedio(){      
+    public void calcularPromedio(){       
 
         //Calcular el promedio excluyendo la peor nota        
         this.promedio = (nota1.getEscala100() + nota2.getEscala100() + nota3.getEscala100() + nota4.getEscala100() + nota5.getEscala100())/5;
