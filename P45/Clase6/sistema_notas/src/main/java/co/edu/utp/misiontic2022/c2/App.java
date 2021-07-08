@@ -75,9 +75,12 @@ public class App{
         materia.setNota5( new Nota(10) );
         materia.mostrarMateria();
 
-        //Crear Estudiante
+
+        //Crear Estudiante y reflejar asociación
         Estudiante estudianteInstanciado = new Estudiante(12345, "Tripulante MisionTIC2022", "Buendía Gómez");
         Materia materiaAsociadaEstudiante = new Materia(estudianteInstanciado, "FundamentosProg",40,50,39,76,96);        
+        materiaAsociadaEstudiante.obtenerPeorNota();
+        materiaAsociadaEstudiante.calcularPromedioAjustado();
         materiaAsociadaEstudiante.mostrarMateria();
 
 
