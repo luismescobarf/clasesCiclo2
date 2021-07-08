@@ -1,0 +1,10 @@
+-> Sesión 4:
+------------
+- Requerimiento de notas bajo el paradigma procedural/estructurado:
+    -> Variables y funciones
+- Introducción a objetos -> Cómo representamos el mundo del problema (requerimientos)
+- Empezar a modelar el requerimiento de notas bajo el paradigma orientado a objetos (contraste entre paradigmas)
+
+
+
+
