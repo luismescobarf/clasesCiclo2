@@ -7,8 +7,8 @@ Sesión Actual:
     - Asociación entre la materia y el estudiante que la cursa.*
     - Asociación entre el profesor encargado de la materia y la materia.*
 -> Colecciones:
-    - Arreglos -> 
-    - Colección de objetos -> Número fijo de notas -> 5 notas. Volverlo variable.
+    - Arreglos -> Estáticos, responden rápidamente, no es fácil mutarlos (tamaño), pueden contener tipos de datos primitivos.
+    - Colección de objetos (ArrayList) -> Número fijo de notas -> 5 notas. Volverlo variable.
 -> Hacer un paquete para la interacción (concepto de agrupación de las clases en mi sistema de información)
 -> Analizar tres en raya orientado a objetos: Clases abstractas, herencia, dependencia.
 
