@@ -1,6 +1,6 @@
 Itinerario
 ----------
-- Crear un nuevo paquete -> Interfaz (menú, captura de info., interacción) para el usuario.
+*- Crear un nuevo paquete -> Interfaz (menú, captura de info., interacción) para el usuario.
 - Modelamiento de Tres en raya -> Herencia, Clases Abstractas ...
 
 
