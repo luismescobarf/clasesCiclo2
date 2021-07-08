@@ -10,12 +10,20 @@ public class Estudiante {
     private String genero;
 
     //Constructores
-    Estudiante(int pCodigo, String pNombres, String pApellidos, int pSemestreActual, String pGenero ){
+    public Estudiante(int pCodigo, String pNombres, String pApellidos, int pSemestreActual, String pGenero ){
         this.codigo = pCodigo;
         this.nombres = pNombres;
         this.apellidos = pApellidos;
         this.semestreActual = pSemestreActual;
         this.genero = pGenero;
+    }
+
+    public Estudiante(){
+        this.codigo = 0;
+        this.nombres = "Nombres Sin Asignar";
+        this.apellidos = "Apellidos Sin Asignar";
+        this.semestreActual = 1;
+        this.genero = "Sin Asignar";
     }
 
     //Métodos

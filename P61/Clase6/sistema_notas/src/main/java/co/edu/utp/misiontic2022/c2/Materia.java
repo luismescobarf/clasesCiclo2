@@ -22,7 +22,7 @@ public class Materia {
     //private Nota[] notasArregloBasico; //Si va a estar fijo
 
     //Constructores
-    Materia(){
+    public Materia(){
         this.nombre = "Sin nombre";
         this.promedioAjustado = 0;
         this.promedio = 0;
@@ -37,7 +37,7 @@ public class Materia {
         this.mejorNota = new Nota();
     }
 
-    Materia(int pNota1_100, int pNota2_100, int pNota3_100, int pNota4_100, int pNota5_100){
+    public Materia(int pNota1_100, int pNota2_100, int pNota3_100, int pNota4_100, int pNota5_100){
         this.nombre = "Sin nombre";
         this.promedioAjustado = 0;
         this.promedio = 0;
@@ -54,9 +54,12 @@ public class Materia {
         //Inicializar el atributo tipo colección        
         this.coleccionarNotasEstaticas();
 
+        //Inicializar el estudiante
+        this.estudianteCursando = new Estudiante();
+
     }
 
-    Materia(Estudiante pEstudianteCursando, int pNota1_100, int pNota2_100, int pNota3_100, int pNota4_100, int pNota5_100){        
+    public Materia(Estudiante pEstudianteCursando, int pNota1_100, int pNota2_100, int pNota3_100, int pNota4_100, int pNota5_100){        
         this.nombre = "Sin nombre";
         this.promedioAjustado = 0;
         this.promedio = 0;
@@ -230,6 +233,10 @@ public class Materia {
     }
 
     //Setters
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
     public void setNota1(Nota nota1) {
         this.nota1 = nota1;
     }
