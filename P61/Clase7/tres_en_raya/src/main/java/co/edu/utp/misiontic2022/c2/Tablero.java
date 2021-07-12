@@ -50,6 +50,17 @@ public class Tablero {
         }
     }
 
+    public void mostrarTablero(){
+        System.out.println();
+        System.out.println();
+        for (int i = 0; i < numFilas; i++) {
+            for (int j = 0; j < numColumnas; j++) {
+                System.out.print(casillas[i][j].getValorConsola() + " ");
+            }
+            System.out.println();
+        }
+    }
+
 
 
     
