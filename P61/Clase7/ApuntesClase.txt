@@ -1,0 +1,14 @@
+Itinerario
+----------
+*- Crear un nuevo paquete -> Interfaz (menú, captura de info., interacción) para el usuario.
+- Modelamiento de Tres en raya -> Herencia, Clases Abstractas, Enumeración, Dependencia ...
+ -> Paradigma Orientado a Objetos
+ -> Posibilidad de dos jugadores de forma manual
+ -> Posibilidad de simulación (dos jugadores automáticos -> máquina) que tengan estrategias diferentes
+    JugadorX -> Manera de jugar específica, o completamente aleatoria.
+    JugadorO -> Su comportamiento particular para jugar, o completamente aletatoria.
+
+
+
+
+
