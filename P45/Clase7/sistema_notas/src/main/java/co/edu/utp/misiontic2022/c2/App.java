@@ -81,10 +81,14 @@ public class App{
         Materia materiaAsociadaEstudiante = new Materia(estudianteInstanciado, "FundamentosProg",40,50,39,76,96);        
         materiaAsociadaEstudiante.obtenerPeorNota();
         materiaAsociadaEstudiante.calcularPromedioAjustado();
+        System.out.println("Mostrar Materia Antes de Agregar Nota");
         materiaAsociadaEstudiante.mostrarMateria();
-
-
-         
+        
+        //Utilizar el nuevo comportamiento
+        materiaAsociadaEstudiante.adicionarNota(20);
+        materiaAsociadaEstudiante.calcularPromedioAjustadoColeccion();
+        System.out.println("Mostrar Materia Después de Agregar Nota y Calcular");
+        materiaAsociadaEstudiante.mostrarMateria();        
 
 
 
