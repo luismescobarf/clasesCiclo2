@@ -98,6 +98,32 @@ public class Nota {
         
     }
 
+    public Nota(String pNombre, int pEscala100){
+        this.nombre = pNombre;
+        this.escala100 = pEscala100;
+        this.escala5 = (double)pEscala100 / 20;
+
+        //Proporcionalidad para la escala
+        // 100 -> 5.0
+        // pEscala100 -> x
+
+        // x(100) = pEscala100 * 5.0
+
+        // x = (pEscala100 * 5.0) / 100
+
+        // x = pEscala100 * 1/20
+        
+        if(pEscala100 >= 60){
+            this.cualitativo = "Aprobado";        
+        }else{
+            this.cualitativo = "Reprobado";
+        }
+
+        //Equivalente resumido del condicional anterior
+        //this.cualitativo = pEscala100 >= 60 ? "Aprobado" : "Reprobado";
+        
+    }
+
     Nota(String pNombre, double pEscala5){
         this.nombre = pNombre;
         this.escala5 = pEscala5;

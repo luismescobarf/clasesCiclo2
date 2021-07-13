@@ -53,6 +53,60 @@ public class InterfazConsola {
         this.estudiante = new Estudiante(pCodigo, pNombres, pApellidos);
     }
 
+    public void registrarMateria(){
+        
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Ingrese el nombre de la materia ");
+        String pNombre = sc.nextLine();
+        System.out.print("Ingrese Nota1 (Escala 100)  ");
+        int pNota1 = sc.nextInt();
+        sc.nextLine();//Manejar el movimiento de carro que no fue interpretado por nextInt()
+        System.out.print("Ingrese Nota2 (Escala 100)  ");
+        int pNota2 = sc.nextInt();
+        sc.nextLine();//Manejar el movimiento de carro que no fue interpretado por nextInt()
+        System.out.print("Ingrese Nota3 (Escala 100)  ");
+        int pNota3 = sc.nextInt();
+        sc.nextLine();//Manejar el movimiento de carro que no fue interpretado por nextInt()
+        System.out.print("Ingrese Nota4 (Escala 100)  ");
+        int pNota4 = sc.nextInt();
+        sc.nextLine();//Manejar el movimiento de carro que no fue interpretado por nextInt()
+        System.out.print("Ingrese Nota5 (Escala 100)  ");
+        int pNota5 = sc.nextInt();
+        sc.nextLine();//Manejar el movimiento de carro que no fue interpretado por nextInt()
+
+        //Instanciar con la información recogida
+        this.materia = new Materia(this.estudiante, pNombre, pNota1, pNota2, pNota3, pNota4, pNota5);        
+        
+    }
+
+    public void registrarNota(){
+        
+        //Formulario (interacción con el usuario)
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Ingrese el nombre de la nota ");
+        String pNombre = sc.nextLine();
+        System.out.print("Ingrese Calificación (Escala 100)  ");
+        int pEscala100 = sc.nextInt();
+        sc.nextLine();//Manejar el movimiento de carro que no fue interpretado por nextInt()
+
+        //Consumo de la lógica o del mundo que hemos modelado
+        this.materia.adicionarNota(pEscala100,pNombre);      
+
+
+    }
+
+    public void mostrarPromedioAjustadoColeccion(){
+        
+        //Calcular el promedio ajustado de la colección
+        this.materia.calcularPromedioAjustadoColeccion();
+
+        //Estando listo ese promedio, preparar el mensaje de salida
+        System.out.println("El promedio ajustado del estudiante "+this.estudiante.getCodigo()+" es "+this.materia.getPromedioAjustado());
+
+    }
+
+    
+
     public void ejecutarMainloop(){
 
         boolean continuar = true;
@@ -66,11 +120,20 @@ public class InterfazConsola {
                 this.registrarEstudiante();
             }else if(opcion == 2){
                 //Llamado al registro de la materia
-                System.out.println("En construcción!!");
+                this.registrarMateria();
             }else if(opcion == 3){
+                //Llamado a presentar promedio  ajustado
+                this.mostrarPromedioAjustadoColeccion();
+            }else if(opcion == 4){
+                //Llamado a mostrar info de la materia
+                this.materia.mostrarMateria();            
+            }else if(opcion == 5){
                 //Llamado a mostrar info del estudiante
                 this.estudiante.mostrarInfoEstudiante();
-            }else if(opcion == 4){
+            }else if(opcion == 6){
+                //Llamado a adicionar nota
+                this.registrarNota();
+            }else if(opcion == 7){
                 continuar  = false;
                 System.out.println("Salida exitosa!");
             }else{
