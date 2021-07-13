@@ -8,13 +8,13 @@ public class Estudiante {
     private String apellidos;
 
     //Constructores
-    Estudiante(){
+    public Estudiante(){
         this.codigo = 0;
         this.nombres = "Sin nombres asignados";
         this.apellidos = "Sin apellidos asignados";
     }
 
-    Estudiante(int pCodigo, String pNombres, String pApellidos){
+    public Estudiante(int pCodigo, String pNombres, String pApellidos){
         this.codigo = pCodigo;
         this.nombres = pNombres;
         this.apellidos = pApellidos;

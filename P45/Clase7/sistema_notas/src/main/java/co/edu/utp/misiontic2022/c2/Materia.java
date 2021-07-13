@@ -22,6 +22,23 @@ public class Materia {
     private ArrayList<Nota> coleccionNotas = new ArrayList<Nota>();
 
     //Constructores
+    public Materia(){
+
+        nombre = "Nombre sin asignar";
+        promedioAjustado = 0.0;
+        promedio = 0.0;
+        nota1 = new Nota();
+        nota2 = new Nota();
+        nota3 = new Nota();
+        nota4 = new Nota();
+        nota5 = new Nota();
+        peorNota = new Nota();            
+        mejorNota = new Nota();
+        estudianteCursando = new Estudiante();       
+        
+        
+    }
+
     Materia(String pNombre, int n1, int n2, int n3, int n4, int n5){
 
         this.nombre = pNombre;
