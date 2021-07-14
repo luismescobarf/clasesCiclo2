@@ -24,9 +24,7 @@ true false true
 true true true
 false true false
 
-Regresamos 8:05pm
-Regresamos 8:05pm
-Regresamos 8:05pm 
+
 
 
 
