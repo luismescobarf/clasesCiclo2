@@ -2,48 +2,34 @@ package co.edu.utp.misiontic2022.c2;
 
 import java.util.ArrayList;
 
-public class JugadorX {
+public class JugadorX extends Jugador{
 
-    //Atributos
-    public String nombreJugador;
-    public int movimientoLogico;
-    public String movimientoConsola;
-
-    //Constructor(es)
-    public JugadorX(String pNombreJugador, int pMovimientoLogico, String pMovimientoConsola){
-        nombreJugador = pNombreJugador;
-        movimientoLogico = pMovimientoLogico;
-        movimientoConsola = pMovimientoConsola;
+    //Constructor
+    JugadorX(String pNombreJugador, int pMovimientoLogico, String pMovimientoConsola){
+        super(pNombreJugador, pMovimientoLogico, pMovimientoConsola);
     }
 
-    //Métodos
+    //Elegir casilla Superior Izquierda
+    public Casilla elegirCasillaSI(Tablero tablero){
 
-    //Comportamiento automático del jugador (bot)/////////
-    public Casilla elegirCasillaAleatoria(ArrayList<Casilla> casillasLibres){
-
-        //Contenedor de la casilla seleccionada
+        //Preparar la casilla que vamos a retornar como seleccionada
         Casilla casillaElegida = new Casilla();
 
-        //Selección aleatoria
-        int Min = 0;
-        int Max = casillasLibres.size();
-        int indiceElegido = Min + (int)(Math.random() * (Max-Min));
-        casillaElegida = casillasLibres.get(indiceElegido);
+        //Obtener casillas vacías
+        ArrayList<Casilla> casillasLibres = tablero.obtenerCasillasVacias();
 
-        //Retornar la casilla elegida
+        //Seleccionar la que se encuentra más cerca de la esquina Superior Izquierda
+        casillaElegida = casillasLibres.get(0);
+
+        //Retornamos la casilla libre que está más cerca de la esquina SI
         return casillaElegida;
+
     }
 
-    public void realizarMovimiento(Casilla casillaSeleccionada, Tablero tablero){
-
-        //Realizar el movimiento en el tablero con la info de la casilla seleccionada
-        int fila = casillaSeleccionada.getFila();
-        int columna = casillaSeleccionada.getColumna();
-        tablero.casillas[fila][columna].aplicarJugada(this.movimientoLogico, this.movimientoConsola);        
-        
+    //Implementar método abstracto (satisfacer requisito de herencia)
+    public void ejecutarEstrategiaEspecifica(Tablero tablero){
+        super.realizarMovimiento(this.elegirCasillaSI(tablero), tablero);
     }
-
-    //Juego manual -> solicitar posiciones al usuario
 
     
 }

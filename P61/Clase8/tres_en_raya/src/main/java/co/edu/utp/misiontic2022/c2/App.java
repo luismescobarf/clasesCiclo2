@@ -19,11 +19,26 @@ public class App{
 
         //Construir jugadorX
         JugadorX jugadorX = new JugadorX("TripulanteX", 10, "X");
+        JugadorO jugadorO = new JugadorO("TripulanteO", 1, "O");
 
-        //El jugadorX va a realizar un movimiento
-        ArrayList<Casilla> casillasVacias = tablero.obtenerCasillasVacias();
-        Casilla casillaElegida = jugadorX.elegirCasillaAleatoria(casillasVacias);
-        jugadorX.realizarMovimiento(casillaElegida, tablero);
+        //El jugadorX va a realizar un movimiento aleatorio
+        //jugadorX.ejecutarEstrategiaAleatoria(tablero);
+        
+        // //Solicitar al jugadorX varios movimientos de su estilo de juego
+        // jugadorX.ejecutarEstrategiaEspecifica(tablero);
+        // jugadorX.ejecutarEstrategiaAleatoria(tablero);
+        // jugadorX.ejecutarEstrategiaEspecifica(tablero);
+
+        //Solicitar jugadas o movimientos al jugadorO
+        // jugadorO.ejecutarEstrategiaEspecifica(tablero);
+        // jugadorO.ejecutarEstrategiaEspecifica(tablero);
+        // jugadorO.ejecutarEstrategiaEspecifica(tablero); 
+        
+        //Solicitar movimientos alternados a los jugadores
+        jugadorO.ejecutarEstrategiaEspecifica(tablero);
+        jugadorX.ejecutarEstrategiaEspecifica(tablero);
+        jugadorO.ejecutarEstrategiaEspecifica(tablero);
+        jugadorX.ejecutarEstrategiaEspecifica(tablero);
 
         //Mostrar tablero después del movimiento
         tablero.mostrarTablero();

@@ -18,6 +18,14 @@ public class Casilla {
         columna = 0;
     }
 
+    public Casilla (int pFila, int pColumna){
+        valorLogico = 0;
+        valorConsola = "_";
+        libre = true;
+        fila = pFila;
+        columna = pColumna;
+    }
+
     //Métodos
     public void aplicarJugada(int pValorLogico, String pValorConsola){
         this.valorLogico = pValorLogico;
