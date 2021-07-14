@@ -121,7 +121,7 @@ public class Nota {
 
         //Equivalente resumido del condicional anterior
         //this.cualitativo = pEscala100 >= 60 ? "Aprobado" : "Reprobado";
-        
+                
     }
 
     Nota(String pNombre, double pEscala5){

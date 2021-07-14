@@ -1,10 +1,13 @@
 -> Sesión 8:
 ------------
 Sesión Anterior:
--> Hacer un paquete para la interacción (concepto de agrupación de las clases en mi sistema de información)
+*-> Hacer un paquete para la interacción (concepto de agrupación de las clases en mi sistema de información)
 Sesión Actual:
--> Iniciar modelamiento e implementación (simultánea) de tres en raya orientado a objetos: Clases abstractas, herencia, dependencia.
-
+-> Iniciar modelamiento e implementación (simultánea) de tres en raya orientado a objetos: 
+    Clases abstractas, *herencia (Don't Repeat Yourself DRY), *dependencia, enumeración.
+    -> Modelar los jugadores con comportamiento automático o manual.
+    -> En la versión automática, el jugadorX y el jugadorO tienen estrategias en común y estrategias diferentes.
+    -> Juego tres en raya -> Gana el jugador que obtenda una línea vertical, diagonal o horizontal.
 
 
 
