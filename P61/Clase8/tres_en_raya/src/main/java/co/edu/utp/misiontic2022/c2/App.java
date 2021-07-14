@@ -34,11 +34,21 @@ public class App{
         // jugadorO.ejecutarEstrategiaEspecifica(tablero);
         // jugadorO.ejecutarEstrategiaEspecifica(tablero); 
         
-        //Solicitar movimientos alternados a los jugadores
-        jugadorO.ejecutarEstrategiaEspecifica(tablero);
-        jugadorX.ejecutarEstrategiaEspecifica(tablero);
-        jugadorO.ejecutarEstrategiaEspecifica(tablero);
-        jugadorX.ejecutarEstrategiaEspecifica(tablero);
+        // //Solicitar movimientos alternados a la versión automática de los jugadores
+        // jugadorO.ejecutarEstrategiaEspecifica(tablero);
+        // jugadorX.ejecutarEstrategiaEspecifica(tablero);
+        // jugadorO.ejecutarEstrategiaEspecifica(tablero);
+        // jugadorX.ejecutarEstrategiaEspecifica(tablero);
+
+        //Alternar turnos manuales
+        jugadorO.realizarMovimientoManual(tablero);
+        tablero.mostrarTablero();
+        jugadorX.realizarMovimientoManual(tablero);
+        tablero.mostrarTablero();
+        jugadorO.realizarMovimientoManual(tablero);
+        tablero.mostrarTablero();
+        jugadorX.realizarMovimientoManual(tablero);
+        tablero.mostrarTablero();
 
         //Mostrar tablero después del movimiento
         tablero.mostrarTablero();
