@@ -9,5 +9,29 @@ Sesión Actual:
     -> En la versión automática, el jugadorX y el jugadorO tienen estrategias en común y estrategias diferentes.
     -> Juego tres en raya -> Gana el jugador que obtenda una línea vertical, diagonal o horizontal.
 
+Tablero Textual Consola
+_ X _
+_ _ _
+O _ O
+
+Tablero Lógico
+0 10 0
+0 0 0
+1 0 1
+
+Tablero Booleana Casillas Libres
+true false true
+true true true
+false true false
+
+Regresamos 8:05pm
+Regresamos 8:05pm
+Regresamos 8:05pm 
+
+
+
+
+
+
 
 
