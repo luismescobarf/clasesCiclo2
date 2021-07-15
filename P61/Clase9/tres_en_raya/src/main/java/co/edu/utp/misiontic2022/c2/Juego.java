@@ -143,19 +143,27 @@ public class Juego {
         //No hay ganador y no hay empate
         return ParametroLogico.SIN_GANADOR;
 
-    } 
+    }     
     
     //Método que modela el juego automático entre los jugadores X y O (bots)
-    public void realizarSimulacion(){
+    public void ejecutarJuego(ParametroLogico modo){
 
         //Ejecutar el juego
         while(true){
 
             //Quien tiene el turno juega
             if(this.turnoActual == ParametroLogico.JUGADOR_O){
-                this.jugadorO.ejecutarEstrategiaAleatoria(tablero);
+                if(modo == ParametroLogico.MODO_MANUAL){
+                    this.jugadorO.realizarMovimientoManual(tablero);;
+                }else{
+                    this.jugadorO.ejecutarEstrategiaAleatoria(tablero);
+                }                
             }else{
-                this.jugadorX.ejecutarEstrategiaAleatoria(tablero);  
+                if(modo == ParametroLogico.MODO_MANUAL){
+                    this.jugadorX.realizarMovimientoManual(tablero);;
+                }else{
+                    this.jugadorX.ejecutarEstrategiaAleatoria(tablero);  
+                }                
             }
 
             //Mostrar el tablero en consola después de cada intervención

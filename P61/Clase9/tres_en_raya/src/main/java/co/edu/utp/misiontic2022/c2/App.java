@@ -57,7 +57,8 @@ public class App{
         Juego juegoTresEnRaya = new Juego("Edgar","Mónica");
 
         //Iniciar la aplicación
-        juegoTresEnRaya.realizarSimulacion();
+        //juegoTresEnRaya.ejecutarJuego(ParametroLogico.MODO_SIMULACION);
+        juegoTresEnRaya.ejecutarJuego(ParametroLogico.MODO_MANUAL);
 
     }
 }
