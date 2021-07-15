@@ -22,10 +22,10 @@ public class App{
         System.out.println("Después de realizar movimientos");
         tablero.mostrarTableroConsola();        
 
-        //Para sobreescritura
-        System.out.println("Llamado a método genérico heredado de Java (sobreescrito)");
-        System.out.println(tablero.casillas[0][0].toString());
-        System.out.println(tablero.casillas[0][1].toString());
+        // //Para sobreescritura
+        // System.out.println("Llamado a método genérico heredado de Java (sobreescrito)");
+        // System.out.println(tablero.casillas[0][0].toString());
+        // System.out.println(tablero.casillas[0][1].toString());
 
     }
 }

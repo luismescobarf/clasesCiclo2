@@ -1,7 +1,5 @@
 -> Sesión 9:
 ------------
-Sesión Anterior:
-*-> Hacer un paquete para la interacción (concepto de agrupación de las clases en mi sistema de información)
 Sesión Actual:
 -> Iniciar modelamiento e implementación (simultánea) de tres en raya orientado a objetos: 
     Clases abstractas, *herencia (Don't Repeat Yourself DRY), *dependencia, enumeración.
