@@ -48,7 +48,6 @@ public class App{
         tablero.mostrarTableroConsola();
         jugadorX.realizarJugadaManual(tablero);
 
-
         //Revisar el tablero después de movimientos automáticos del jugadorX
         System.out.println("Después de realizar movimientos");
         tablero.mostrarTableroConsola(); 
