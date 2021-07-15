@@ -91,5 +91,112 @@ public class Juego {
         return sumatoria;
     }
 
+    //Revisar el tablero para establecer si hay ganador, empate, o aún no ha terminado el juego
+    public ParametroLogico revisarTablero(){
+
+        //Realizar las sumatorias de las filas
+        ArrayList<Integer> sumatoriasFilas = new ArrayList<Integer>();
+        for (int i = 0; i < Tablero.NUM_FILAS; i++) {
+            sumatoriasFilas.add( sumatoriaCasillas(obtenerFila(i)) );             
+        }
+
+        //Realizar las sumatorias de las columnas
+        ArrayList<Integer> sumatoriasColumnas = new ArrayList<Integer>();
+        for (int j = 0; j < Tablero.NUM_COLUMNAS; j++) {
+            sumatoriasColumnas.add( sumatoriaCasillas(obtenerColumna(j)) );             
+        }
+
+        //Ralizar las sumatorias de las diagonales
+        int sumatoriaDiagonal = sumatoriaCasillas(obtenerDiagonal());
+        int sumatoriaDiagonalInversa = sumatoriaCasillas(obtenerDiagonalInversa());
+
+        //Ganador
+
+        //Si JugadorO Gana
+        if( sumatoriasFilas.contains(ParametroLogico.LINEA_JUGADOR_O.getValorLogico()) ||
+            sumatoriasColumnas.contains(ParametroLogico.LINEA_JUGADOR_O.getValorLogico()) ||
+            sumatoriaDiagonal == ParametroLogico.LINEA_JUGADOR_O.getValorLogico() ||
+            sumatoriaDiagonalInversa == ParametroLogico.LINEA_JUGADOR_O.getValorLogico()       
+        ){
+            //Retornamos el valor lógico del jugador
+            return ParametroLogico.JUGADOR_O;
+        }
+
+        //Si JugadorX Gana
+        if( sumatoriasFilas.contains(ParametroLogico.LINEA_JUGADOR_X.getValorLogico()) ||
+            sumatoriasColumnas.contains(ParametroLogico.LINEA_JUGADOR_X.getValorLogico()) ||
+            sumatoriaDiagonal == ParametroLogico.LINEA_JUGADOR_X.getValorLogico() ||
+            sumatoriaDiagonalInversa == ParametroLogico.LINEA_JUGADOR_X.getValorLogico()       
+        ){
+            //Retornamos el valor lógico del jugador
+            return ParametroLogico.JUGADOR_X;
+        }
+
+        //Empate
+        int sumatoriaCompleta = this.sumatoriaTablero();
+        if( sumatoriaCompleta == ParametroLogico.EMPATE_INICIANDO_O.getValorLogico() ||
+            sumatoriaCompleta == ParametroLogico.EMPATE_INICIANDO_X.getValorLogico()
+        ){
+            return ParametroLogico.PARTIDA_EMPATADA;
+        }
+
+        //No hay ganador y no hay empate
+        return ParametroLogico.SIN_GANADOR;
+
+    } 
+    
+    //Método que modela el juego automático entre los jugadores X y O (bots)
+    public void realizarSimulacion(){
+
+        //Ejecutar el juego
+        while(true){
+
+            //Quien tiene el turno juega
+            if(this.turnoActual == ParametroLogico.JUGADOR_O){
+                this.jugadorO.ejecutarEstrategiaAleatoria(tablero);
+            }else{
+                this.jugadorX.ejecutarEstrategiaAleatoria(tablero);  
+            }
+
+            //Mostrar el tablero en consola después de cada intervención
+            this.tablero.mostrarTablero();
+
+            //Comportamiento arbitral de la clase
+            ParametroLogico revision = this.revisarTablero();
+            if(revision == ParametroLogico.JUGADOR_O){
+                System.out.println("El Jugador O -> "+ this.jugadorO.nombreJugador + " ha ganado!");
+                this.empate = false;
+                this.ganador = true;
+                this.valorGanador = ParametroLogico.JUGADOR_O;
+                break;
+            }else if(revision == ParametroLogico.JUGADOR_X){
+                System.out.println("El Jugador X -> "+ this.jugadorX.nombreJugador + " ha ganado!");
+                this.empate = false;
+                this.ganador = true;
+                this.valorGanador = ParametroLogico.JUGADOR_X;
+                break;
+            }else if(revision == ParametroLogico.PARTIDA_EMPATADA){
+                System.out.println("Empate!!!");
+                this.empate = true;
+                this.ganador = false;
+                this.valorGanador = ParametroLogico.PARTIDA_EMPATADA;
+                break;
+            }else if(revision == ParametroLogico.SIN_GANADOR){
+                String quienJuega = this.turnoActual == ParametroLogico.JUGADOR_O ? "Jugador O "+this.jugadorO.nombreJugador : "Jugador X "+this.jugadorX.nombreJugador;
+                System.out.println("Jugando: "+quienJuega);
+                System.out.println("Aún no se decide la partida...");
+            }
+
+            //Alternar el turno
+            if(this.turnoActual == ParametroLogico.JUGADOR_O){
+                this.turnoActual = ParametroLogico.JUGADOR_X;
+            }else{
+                this.turnoActual = ParametroLogico.JUGADOR_O;
+            }
+
+        }
+
+    }
+
     
 }

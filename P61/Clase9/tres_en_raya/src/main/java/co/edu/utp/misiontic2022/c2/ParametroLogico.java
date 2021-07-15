@@ -7,7 +7,7 @@ public enum ParametroLogico {
     //Valores lógicos JugadorX
     JUGADOR_X(10), LINEA_JUGADOR_X(30),
     //Situaciones de empate
-    EMPATE_INICIANDO_O(45), EMPATE_INICIANDO_X(54);
+    EMPATE_INICIANDO_O(45), EMPATE_INICIANDO_X(54), PARTIDA_EMPATADA(1), SIN_GANADOR(0);
 
     //Atributo que representa el valor
     private int valorLogico;
