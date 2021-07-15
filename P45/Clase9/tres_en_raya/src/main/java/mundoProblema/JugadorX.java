@@ -1,33 +1,31 @@
 package mundoProblema;
 
-public class JugadorX {
+import java.util.ArrayList;
 
-    //Atributos
-    public String nombreJugador;
-    public int movimientoLogico;
-    public String movimientoConsola;
+public class JugadorX extends Jugador{
 
-    //Constructores
+    //Atributos -> Heredados
+
+    //Establecer nuevos constructores o consumir alguno de los constructores
+    //de la superclase (abstracta)
     JugadorX(String pNombre, int pMovimientoLogico, String pMovimientoConsola){
-        this.nombreJugador = pNombre;
-        this.movimientoLogico = pMovimientoLogico;
-        this.movimientoConsola = pMovimientoConsola;
+        super(pNombre, pMovimientoLogico, pMovimientoConsola);        
     }
 
-    //Comportamientos (Métodos)
-
-    //Elegir casilla del tablero aleatoriamente para realizar la jugada
-    public Casilla elegirCasillaAleatoria(Tablero tablero){
-        
-
-
+    public Casilla elegirCasillaSI(Tablero tablero){        
+        Casilla casillaElegida = new Casilla();
+        ArrayList<Casilla> casillasLibres = tablero.obtenerCasillasVacias();
+        casillaElegida = casillasLibres.get(0);
+        return casillaElegida;
     }
 
-    //Realizar la jugada con base en la casilla elegida
-
-    //Ejecutar estrategia
-
-
+    //Implementar el método abstracto pendiente (requisito)
+    public void ejecutarEstrategiaEspecifica(Tablero tablero){
+        //JugadorX busca la esquina superior izquierda (SI) del tablero que esté vacía
+        super.realizarJugada(this.elegirCasillaSI(tablero), tablero);
+    }
+    
+    
 
 
     

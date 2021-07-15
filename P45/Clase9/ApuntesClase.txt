@@ -2,7 +2,7 @@
 ------------
 Sesión Actual:
 -> Iniciar modelamiento e implementación (simultánea) de tres en raya orientado a objetos: 
-    Clases abstractas, *herencia (Don't Repeat Yourself DRY), *dependencia, enumeración.
+    *Clases abstractas, *herencia (Don't Repeat Yourself DRY), *dependencia, enumeración.
     -> Modelar los jugadores con comportamiento automático o manual.
     -> En la versión automática, el jugadorX y el jugadorO tienen estrategias en común y estrategias diferentes.
     -> Juego tres en raya -> Gana el jugador que obtenda una línea vertical, diagonal o horizontal.
