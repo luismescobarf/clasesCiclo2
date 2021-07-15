@@ -2,12 +2,12 @@ Itinerario
 ----------
 - Modelamiento de Tres en raya 
     Conceptos: *Herencia (DRY), *Clases Abstractas (Establecer un comportamiento que se debe definir), 
-    Enumeración, *Dependencia (Uso) ...
- -> Paradigma Orientado a Objetos
+    Enumeración, *Dependencia (Uso) ... 
  *-> Posibilidad de dos jugadores de forma manual
  *-> Posibilidad de simulación (dos jugadores automáticos -> máquina) que tengan estrategias diferentes
     JugadorX -> Manera de jugar específica, o completamente aleatoria.
     JugadorO -> Manera de jugar específica, o completamente aletatoria.
+- Modelar la clase Juego -> Sistema.
 
 
 Cómo luce el tablero en consola?
