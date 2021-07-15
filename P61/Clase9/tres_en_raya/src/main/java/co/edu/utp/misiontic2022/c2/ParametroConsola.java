@@ -1,3 +1,5 @@
+package co.edu.utp.misiontic2022.c2;
+
 public enum ParametroConsola {
 
     //Valores consola Jugadores
@@ -17,3 +19,4 @@ public enum ParametroConsola {
     }
     
 }
+

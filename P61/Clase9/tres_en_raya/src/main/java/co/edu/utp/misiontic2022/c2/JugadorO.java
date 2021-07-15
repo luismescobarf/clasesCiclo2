@@ -4,9 +4,13 @@ import java.util.ArrayList;
 
 public class JugadorO extends Jugador{
 
-    //Constructor
+    //Constructores
     JugadorO(String pNombreJugador, int pMovimientoLogico, String pMovimientoConsola){
         super(pNombreJugador, pMovimientoLogico, pMovimientoConsola);
+    }
+
+    JugadorO(String pNombreJugador){
+        super(pNombreJugador, ParametroLogico.JUGADOR_O.getValorLogico(), ParametroConsola.JUGADOR_O.getValorConsola());
     }
 
     //Métodos
