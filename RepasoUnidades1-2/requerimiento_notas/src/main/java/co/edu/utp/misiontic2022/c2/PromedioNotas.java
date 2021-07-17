@@ -90,7 +90,9 @@ public class PromedioNotas {
         int nota5 = sc.nextInt();
 
         //Ejecutar las funciones -> al paso 3 (internamente realiza el paso 2)
-        double promedioAjustado = convertirEscala5(calcularPromedioAjustado(nota1, nota2, nota3, nota4, nota5)) ;
+        //double promedioAjustado = convertirEscala5(calcularPromedioAjustado(nota1, nota2, nota3, nota4, nota5)) ;
+        double promedioAjustado = calcularPromedioAjustado(nota1, nota2, nota3, nota4, nota5);
+        promedioAjustado = convertirEscala5(promedioAjustado);
 
         //Reportar el resultado
         //reportarPromedioAjustado(codigoEstudiante, Math.round(promedioAjustado) );
