@@ -1,0 +1,6 @@
+Repaso Unidades 1 y 2
+-------------------------------------
+- Requerimiento sencillo en Java en Paradigma Procedural/Estructurado (Definición de funciones-Ciclo1)
+- Mismo requerimiento trasladado al Paradigma Orientado a Objetos
+- Diferenciando paquetes
+- Diagrama de Clases de la solución bajo POO
