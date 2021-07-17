@@ -12,8 +12,9 @@ public class Materia {
     String codigoEstudianteCursando;
 
     //Constructores
-    public Materia(String pNombre, int n1, int n2, int n3, int n4, int n5){
+    public Materia(String pCodigoEstudianteCursando, String pNombre, int n1, int n2, int n3, int n4, int n5){
         this.nombre = pNombre;        
+        this.codigoEstudianteCursando = pCodigoEstudianteCursando;        
         this.notasQuizes.add(new Nota(n1));
         this.notasQuizes.add(new Nota(n2));
         this.notasQuizes.add(new Nota(n3));
@@ -30,6 +31,34 @@ public class Materia {
                 this.peorNota = nota;
             }
         }        
+    }
+
+    //Calcular el promedio ajustado
+    public void calcularPromedioAjustado(){
+
+        //Obtener peor nota
+        this.obtenerPeorNota();
+
+        //Recorrer las notas para obtener la sumatoria
+        double sumatoria = 0;
+        for (Nota nota : notasQuizes) {
+            sumatoria += nota.getEscala5();            
+        }
+        //this.promedioAjustado = Math.round((sumatoria - this.peorNota.getEscala5()) / (this.notasQuizes.size()-1));        
+        this.promedioAjustado = (sumatoria - this.peorNota.getEscala5()) / (this.notasQuizes.size()-1);        
+
+    }
+
+    //Mostrar materia
+    public void mostrarMateria(){
+        System.out.println("****Materia: "+this.nombre+" ******");
+        System.out.println();
+        for (Nota nota : notasQuizes) {
+            nota.mostrarNota();
+        }        
+        System.out.println("Promedio ajustado de "+this.codigoEstudianteCursando+" : "+this.promedioAjustado);
+        System.out.println("Peor Nota!!!");
+        this.peorNota.mostrarNota();
     }
 
 
