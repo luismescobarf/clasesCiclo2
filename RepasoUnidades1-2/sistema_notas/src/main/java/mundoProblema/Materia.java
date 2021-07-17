@@ -24,6 +24,14 @@ public class Materia {
         this.promedioAjustado = 0;
     }
 
+    public Materia(String pCodigoEstudianteCursando, String pNombre, ArrayList<Nota> pNotasQuizes){
+        this.nombre = pNombre;        
+        this.codigoEstudianteCursando = pCodigoEstudianteCursando;        
+        this.notasQuizes = pNotasQuizes;
+        this.peorNota = new Nota(100);
+        this.promedioAjustado = 0;
+    }
+
     //Obtener la peor nota
     public void obtenerPeorNota(){        
         for (Nota nota : notasQuizes) {
@@ -59,6 +67,9 @@ public class Materia {
         System.out.println("Promedio ajustado de "+this.codigoEstudianteCursando+" : "+this.promedioAjustado);
         System.out.println("Peor Nota!!!");
         this.peorNota.mostrarNota();
+
+        //Crear nota auxiliar -> Revisando composición
+        //Nota notaAuxiliar = new Nota();
     }
 
 
