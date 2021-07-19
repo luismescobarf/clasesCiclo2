@@ -1,5 +1,3 @@
-package mundoProblema;//No se sube a la plataforma el paquete!!
-
 public class BecaUniversitaria {
    
     //Atributos
@@ -72,33 +70,7 @@ public class BecaUniversitaria {
         //     return "La diferencia entre la proyección de interés compuesto e interés simple es: $" + diferencia;
         // }
 
-    }
-
-    //No se sube a la plataforma!!
-    public static void main(String[] args) {
-
-        //Caso de prueba 1
-        BecaUniversitaria becaUniversitaria = new BecaUniversitaria();
-        System.out.println(becaUniversitaria.calcularInteresSimple()); 
-        System.out.println(becaUniversitaria.calcularInteresCompuesto());        
-        System.out.println(becaUniversitaria.compararInversion(60,13000,1.4));
-
-        //Caso de prueba 2
-        BecaUniversitaria becaUniversitaria2 = new BecaUniversitaria(48,10000,2);
-        System.out.println(becaUniversitaria2.calcularInteresSimple()); 
-        System.out.println(becaUniversitaria2.calcularInteresCompuesto());        
-        System.out.println(becaUniversitaria2.compararInversion());
-
-        //Caso de prueba 3
-        BecaUniversitaria becaUniversitaria3 = new BecaUniversitaria();
-        System.out.println(becaUniversitaria3.calcularInteresSimple()); 
-        System.out.println(becaUniversitaria3.calcularInteresCompuesto());        
-        System.out.println(becaUniversitaria3.compararInversion());
-
-    }
-
-
-    
+    }   
 
 
 }
