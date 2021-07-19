@@ -1,0 +1,33 @@
+-> Sesión 9:
+------------
+Sesión Actual:
+-> Iniciar modelamiento e implementación (simultánea) de tres en raya orientado a objetos: 
+    *Clases abstractas, *herencia (Don't Repeat Yourself DRY), *dependencia, *enumeración.
+    -> Modelar los jugadores con comportamiento automático o manual.
+    -> En la versión automática, el jugadorX y el jugadorO tienen estrategias en común y estrategias diferentes.
+    -> Juego tres en raya -> Gana el jugador que obtenda una línea vertical, diagonal o horizontal.
+
+Tablero Textual Consola
+_ X _
+_ _ _
+O _ O
+
+Tablero Lógico
+0 10 0
+0 0 0
+1 0 1
+
+Tablero Booleana Casillas Libres
+true false true
+true true true
+false true false
+
+
+
+
+
+
+
+
+
+
