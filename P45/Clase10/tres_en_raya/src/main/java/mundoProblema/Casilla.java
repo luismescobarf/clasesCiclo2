@@ -50,6 +50,10 @@ public class Casilla {
         return valorConsola;
     }
 
+    public int getValorLogico() {
+        return valorLogico;
+    }
+
     //Setters
     public void setColumna(int columna) {
         this.columna = columna;
