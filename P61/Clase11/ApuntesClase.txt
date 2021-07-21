@@ -1,0 +1,10 @@
+Introducción a las Bases de Datos
+---------------------------------
+
+- Sistema de información sin BD, Archivos -> Corriendo toda la información se crea en memorias temporales.
+                                          -> Termina de correr y se pierde toda la información temporal.
+
+- Información esté organizada y almacenada para el momento en el que volvemos a correr: persistencia.
+    -> Archivos: por cada entidad relevante del mundo del problema tendríamos un archivo.
+    -> Bases de Datos   -> Todas las entidades en un mismo contenedor, además estarán relacionadas.
+                        -> SGBD -> Access, MySQL, SQLite3, PostgreSQL, MariaDB, Oracle -> Dialecto SQL
