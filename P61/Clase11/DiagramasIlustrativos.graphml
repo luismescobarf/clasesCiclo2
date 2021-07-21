@@ -2232,7 +2232,7 @@ ORACLE<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelModel><y:Mod
       <data key="d5"/>
       <data key="d6">
         <y:GenericNode configuration="com.yworks.entityRelationship.big_entity">
-          <y:Geometry height="103.5536117629407" width="112.52866823105796" x="3681.4851800227593" y="788.5042635724544"/>
+          <y:Geometry height="103.5536117629407" width="112.52866823105796" x="3666.049868901068" y="760.369207168651"/>
           <y:Fill color="#E8EEF7" color2="#B7C9E3" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
           <y:NodeLabel alignment="center" autoSizePolicy="content" backgroundColor="#B7C9E3" configuration="com.yworks.entityRelationship.label.name" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasLineColor="false" height="18.1328125" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="t" textColor="#000000" verticalTextPosition="bottom" visible="true" width="53.599609375" x="29.464529428028982" xml:space="preserve" y="4.0">Empresa</y:NodeLabel>
