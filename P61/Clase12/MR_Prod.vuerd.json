@@ -1,0 +1,338 @@
+{
+  "canvas": {
+    "version": "2.1.0",
+    "width": 2000,
+    "height": 2000,
+    "scrollTop": -136.66666666666666,
+    "scrollLeft": -136.66666666666683,
+    "zoomLevel": 0.8,
+    "show": {
+      "tableComment": true,
+      "columnComment": true,
+      "columnDataType": true,
+      "columnDefault": true,
+      "columnAutoIncrement": false,
+      "columnPrimaryKey": true,
+      "columnUnique": false,
+      "columnNotNull": true,
+      "relationship": true
+    },
+    "database": "SQLite",
+    "databaseName": "Productos",
+    "canvasType": "ERD",
+    "language": "GraphQL",
+    "tableCase": "pascalCase",
+    "columnCase": "camelCase",
+    "highlightTheme": "VS2015",
+    "bracketType": "none",
+    "setting": {
+      "relationshipDataTypeSync": true,
+      "columnOrder": [
+        "columnName",
+        "columnDataType",
+        "columnNotNull",
+        "columnUnique",
+        "columnAutoIncrement",
+        "columnDefault",
+        "columnComment"
+      ]
+    }
+  },
+  "table": {
+    "tables": [
+      {
+        "name": "Empresa",
+        "comment": "",
+        "columns": [
+          {
+            "name": "ID_Empresa",
+            "comment": "",
+            "dataType": "INTEGER",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": true,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": true,
+              "fk": false,
+              "pfk": false,
+              "widthName": 74,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "5bca0a5d-323b-4e0c-9843-cc44191fb96f"
+          },
+          {
+            "name": "Nombre",
+            "comment": "",
+            "dataType": "VARCHAR(50)",
+            "default": "\"Sin nombre asignado\"",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 88,
+              "widthDefault": 134
+            },
+            "id": "795c802e-da91-47d6-884d-5a661df958d7"
+          },
+          {
+            "name": "NIT",
+            "comment": "",
+            "dataType": "VARCHAR(20)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 88,
+              "widthDefault": 60
+            },
+            "id": "f6b4ded0-c6c9-4d33-b30d-2f28f066d8df"
+          },
+          {
+            "name": "Fecha_Fundacion",
+            "comment": "",
+            "dataType": "DATETIME",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 106,
+              "widthComment": 60,
+              "widthDataType": 67,
+              "widthDefault": 60
+            },
+            "id": "94d23f7f-6f71-4fe9-8167-39e512c84b32"
+          }
+        ],
+        "ui": {
+          "active": false,
+          "left": 10.627192982456293,
+          "top": 69.82017543859651,
+          "zIndex": 207,
+          "widthName": 60,
+          "widthComment": 60
+        },
+        "id": "2b2736dc-6509-491c-bef6-7727e6f6af5f"
+      },
+      {
+        "name": "Producto",
+        "comment": "",
+        "columns": [
+          {
+            "name": "ID_Producto",
+            "comment": "",
+            "dataType": "INTEGER",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": true,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": true,
+              "fk": false,
+              "pfk": false,
+              "widthName": 74,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "622d58f6-f251-4e20-b9db-9a72d91cbb72"
+          },
+          {
+            "name": "Nombre",
+            "comment": "",
+            "dataType": "TEXT",
+            "default": "\"Sin asignar\"",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 76
+            },
+            "id": "3ce4cb3a-4b92-4a89-9999-4f481747722f"
+          },
+          {
+            "name": "Codigo",
+            "comment": "",
+            "dataType": "VARCHAR(10)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": true,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": true,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 88,
+              "widthDefault": 60
+            },
+            "id": "4a245f58-4892-4e81-875a-1a12401ec312"
+          },
+          {
+            "name": "Descripcion",
+            "comment": "",
+            "dataType": "TEXT",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 70,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "2e2056cf-59cc-493d-a0bc-2495615a5536"
+          },
+          {
+            "name": "Precio_Unitario",
+            "comment": "",
+            "dataType": "REAL",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 91,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "8eebf02d-3215-4a84-b557-ed75bfcff776"
+          },
+          {
+            "name": "ID_Empresa",
+            "comment": "",
+            "dataType": "INTEGER",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": true,
+              "pfk": false,
+              "widthName": 74,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "83b6dd28-4494-46a9-830a-2710115c85f3"
+          }
+        ],
+        "ui": {
+          "active": false,
+          "left": 620.820175438597,
+          "top": 139.66228070175453,
+          "zIndex": 206,
+          "widthName": 60,
+          "widthComment": 60
+        },
+        "id": "7028660c-c56f-4cd5-a4de-7dd78ab23a1d"
+      }
+    ],
+    "indexes": []
+  },
+  "memo": {
+    "memos": []
+  },
+  "relationship": {
+    "relationships": [
+      {
+        "identification": false,
+        "relationshipType": "OneN",
+        "startRelationshipType": "Dash",
+        "start": {
+          "tableId": "2b2736dc-6509-491c-bef6-7727e6f6af5f",
+          "columnIds": [
+            "5bca0a5d-323b-4e0c-9843-cc44191fb96f"
+          ],
+          "x": 505.6271929824563,
+          "y": 145.3201754385965,
+          "direction": "right"
+        },
+        "end": {
+          "tableId": "7028660c-c56f-4cd5-a4de-7dd78ab23a1d",
+          "columnIds": [
+            "83b6dd28-4494-46a9-830a-2710115c85f3"
+          ],
+          "x": 620.820175438597,
+          "y": 235.66228070175453,
+          "direction": "left"
+        },
+        "constraintName": "fk_empresa_to_producto",
+        "id": "4f371f6a-75c6-4125-9a39-2831b3fc4be6"
+      }
+    ]
+  }
+}
