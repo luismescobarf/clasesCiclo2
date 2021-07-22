@@ -19,7 +19,7 @@
     },
     "database": "SQLite",
     "databaseName": "Productos",
-    "canvasType": "ERD",
+    "canvasType": "SQLDDL",
     "language": "GraphQL",
     "tableCase": "pascalCase",
     "columnCase": "camelCase",
@@ -141,7 +141,7 @@
           "active": false,
           "left": 10.627192982456293,
           "top": 69.82017543859651,
-          "zIndex": 207,
+          "zIndex": 2,
           "widthName": 60,
           "widthComment": 60
         },
@@ -294,7 +294,7 @@
           "active": false,
           "left": 620.820175438597,
           "top": 139.66228070175453,
-          "zIndex": 206,
+          "zIndex": 1,
           "widthName": 60,
           "widthComment": 60
         },
