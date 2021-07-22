@@ -23,9 +23,7 @@ SELECT * FROM Empresa;
 SELECT Antiguedad FROM Empresa;
 
 
-
-
----------------Generación Gráfica
+---------------Generación Gráfica (Asistida)
 CREATE TABLE Empresa
 (
   ID_Empresa      INTEGER     NOT NULL,
@@ -36,6 +34,8 @@ CREATE TABLE Empresa
   PRIMARY KEY (ID_Empresa)
 );
 
+INSERT INTO Empresa (Nombre,NIT,Fecha_Fundacion) VALUES ('Grupo61','123513-9','1998-07-07');
+
 CREATE TABLE Proveedor(
     ID_Proveedor INTEGER NOT NULL,
     Nombre VARCHAR(50) NOT NULL,
@@ -43,6 +43,8 @@ CREATE TABLE Proveedor(
     Direccion VARCHAR(50) NOT NULL,
     PRIMARY KEY(ID_Proveedor)
 );
+
+INSERT INTO Proveedor (Nombre,NIT,Direccion) VALUES ('SuministrosStaMarta','4567','Calle 12 No 3');
 
 CREATE TABLE Producto
 (
@@ -53,10 +55,13 @@ CREATE TABLE Producto
   Precio_Unitario REAL        NOT NULL,
   ID_Empresa      INTEGER     NOT NULL,
   ID_Proveedor      INTEGER     NOT NULL,
-  PRIMARY KEY (ID_Producto, Codigo),
+  PRIMARY KEY (ID_Producto),
   FOREIGN KEY (ID_Empresa) REFERENCES Empresa (ID_Empresa),
   FOREIGN KEY (ID_Proveedor) REFERENCES Proveedor (ID_Proveedor)
 );
+
+INSERT INTO Producto    (Nombre,Codigo,Precio_Unitario, ID_Empresa, ID_Proveedor ) 
+        VALUES          ('Papas Rampi','pr4566',1500,1,1);
 
 CREATE TABLE Cliente
 (
@@ -80,3 +85,4 @@ CREATE TABLE Compra (
     FOREIGN KEY (ID_Cliente) REFERENCES Cliente (ID_Cliente),    
     PRIMARY KEY (ID_Compra)
 );
+
