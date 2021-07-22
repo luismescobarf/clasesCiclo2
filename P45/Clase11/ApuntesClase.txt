@@ -1,26 +1,20 @@
--> Sesión 9:
+-> Sesión 11:
 ------------
-Sesión Actual:
--> Iniciar modelamiento e implementación (simultánea) de tres en raya orientado a objetos: 
-    *Clases abstractas, *herencia (Don't Repeat Yourself DRY), *dependencia, *enumeración.
-    -> Modelar los jugadores con comportamiento automático o manual.
-    -> En la versión automática, el jugadorX y el jugadorO tienen estrategias en común y estrategias diferentes.
-    -> Juego tres en raya -> Gana el jugador que obtenda una línea vertical, diagonal o horizontal.
+-> Proceso de Diseño de BD:
+    1) Modelo Entidad Relación -> Lógica (Abstracción -> Similar a POO, En virtud de datos o atributos)
+    2) Modelo Relacional -> Física, Diagrama Físico (Implementamos Modelo E-R)
+    3) Puesta en marcha de la Base de Datos.
 
-Tablero Textual Consola
-_ X _
-_ _ _
-O _ O
+Primer Requerimiento:
 
-Tablero Lógico
-0 10 0
-0 0 0
-1 0 1
-
-Tablero Booleana Casillas Libres
-true false true
-true true true
-false true false
+Una empresa vende productos a varios clientes. Se necesita conocer los datos personales 
+de los clientes (nombre, apellidos, dni, dirección y fecha de nacimiento). Cada producto 
+tiene un nombre y un código, así como un precio unitario. Un cliente puede comprar varios 
+productos a la empresa, y un mismo producto puede ser comprado por varios clientes. 
+Los productos son suministrados por diferentes proveedores. Se debe tener en cuenta que 
+un producto sólo puede ser suministrado por un proveedor, y que un proveedor puede 
+suministrar diferentes productos. De cada proveedor se desea conocer el NIF, nombre y 
+dirección.
 
 
 
