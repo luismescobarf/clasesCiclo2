@@ -12,6 +12,7 @@ CREATE TABLE Empresa (
 INSERT INTO Empresa (Nombre, NIT, Fecha_Inicio) VALUES ('Variedades12','12345-6','2010-05-12');
 INSERT INTO Empresa (ID_Empresa, Nombre, NIT, Fecha_Inicio) VALUES (400,'OtraEpresa','77777-6','1985-05-12');
 INSERT INTO Empresa (Nombre, NIT, Fecha_Inicio) VALUES ('OtraEpresa','555-6','1999-12-12');
+INSERT INTO Empresa (Nombre, NIT, Fecha_Inicio) VALUES ('Probando Unique','555-6','1980-12-12');
 
 CREATE TABLE Proveedor (
     ID_Proveedor INTEGER NOT NULL,
