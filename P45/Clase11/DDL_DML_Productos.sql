@@ -1,0 +1,1 @@
+-- Descripción de la estructura de la tabla Empresa
