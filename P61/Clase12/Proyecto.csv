@@ -1,0 +1,16 @@
+Fecha_Inicio;Constructora;Numero_Banos;Numero_Habitaciones;Banco_Vinculado;Porcentaje_Cuota_Inicial;Ciudad;Clasificacion;Acabados
+15/06/20;Ingenieros Ltda.;1;1;Banco de Occidente;0.30;Pereira;Apartamento;Si
+7/12/20;Pegaso;2;2;Davivienda;0.20;Salento;Casa;No
+4/04/21;Hermanos Gallego;3;3;Bancolombia;0.10;Sta. Rosa de Cabal;Apartaestudio;
+9/09/19;Arquitectura S.A.;;4;Colpatria;;Barranquilla;Condominio;
+;Edificios y Edificios;;;Conavi;;Bogota;Casa Campestre;
+;;;;Colmena;;Manizales;;
+;;;;;;Armenia;;
+;;;;;;Monteria;;
+;;;;;;Cartagena;;
+;;;;;;Santa Marta;;
+;;;;;;Cartago;;
+;;;;;;Neiva;;
+;;;;;;Ibague;;
+;;;;;;Quibdo;;
+;;;;;;Bucaramanga;;
