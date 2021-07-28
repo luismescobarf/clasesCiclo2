@@ -20,6 +20,12 @@ public class App{
         sumatoria += organico3.calcularPrecio();
         System.out.println("Valor verduras cultivo orgánico = "+sumatoria);        
         
+        //Comportamiento especialización convencional
+        Convencional convencional1 = new Convencional("Maíz", 3.0,1000,true);
+        //System.out.println("Prueba convencional precio = "+convencional1.calcularPrecio());
+        convencional1.mostrarConsola();
+        Convencional convencional2 = new Convencional("Cebolla Morada", 4.0,0.1,2,400,true);
+        convencional2.mostrarConsola();
 
     }
 

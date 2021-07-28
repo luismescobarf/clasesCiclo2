@@ -53,5 +53,13 @@ public class Verdura {
     public double getPrecioBase() {
         return precioBase;
     }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public void setPrecioBase(double precioBase) {
+        this.precioBase = precioBase;
+    }
     
 }
