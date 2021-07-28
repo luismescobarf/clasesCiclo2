@@ -36,6 +36,25 @@ public class Convencional extends Fruta{
     }
 
     //Método
+    public double calcularPrecio(){
+        double precioVenta = super.calcularPrecio();
+        double precioConvencional = precioVenta + (precioVenta*this.recargoConvencionales);
+        precioConvencional += precioVenta * (0.01 * this.gradoAditamentos);
+        return precioConvencional;
+    }
 
+    public void mostrarConsola(){
+        System.out.println();
+        System.out.println("----Info Fruta Convencional-----");
+        System.out.println("Convencional: Sí");
+        System.out.println("Nombre:" + super.getNombre());
+        System.out.println("Precio Base:" + super.getPrecioBase());
+        System.out.println("Gramos Venta:" + super.gramosVenta);
+        String importadoSiNo = super.importada ? "Sí" : "No";
+        System.out.println("Importada: "+importadoSiNo);
+        System.out.println("Recargo Convencionales: "+this.recargoConvencionales);
+        System.out.println("Grado Aditamentos: "+this.gradoAditamentos);
+        System.out.println("Precio ->: "+ this.calcularPrecio());
+    }
     
 }
