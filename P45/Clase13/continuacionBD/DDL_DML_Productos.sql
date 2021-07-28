@@ -38,3 +38,25 @@ CREATE TABLE Producto (
     FOREIGN KEY (ID_Empresa) REFERENCES Empresa(ID_Empresa),   
     FOREIGN KEY (ID_Proveedor) REFERENCES Proveedor(ID_Proveedor) 
 );
+
+-- Generar tablas utilizando GUI
+
+CREATE TABLE Empresa
+(
+  ID_Empresa   INTEGER     NOT NULL,
+  Nombre       VARCHAR(40) NOT NULL DEFAULT "Sin Nombre",
+  NIT          VARCHAR(15) NOT NULL,
+  Fecha_Inicio DATETIME    NOT NULL,
+  Antiguedad INTEGER GENERATED ALWAYS AS( DATETIME('2021-01-01') - Fecha_Inicio ),
+  PRIMARY KEY (ID_Empresa)
+);
+
+CREATE TABLE Producto
+(
+  ID_Producto     INTEGER NOT NULL,
+  Nombre          TEXT    NULL    ,
+  Precio_Unitario REAL    NOT NULL,
+  ID_Empresa      INTEGER NOT NULL,
+  PRIMARY KEY (ID_Producto),
+  FOREIGN KEY (ID_Empresa) REFERENCES Empresa (ID_Empresa)
+);    
