@@ -41,21 +41,21 @@ public class Convencional extends Verdura {
         this.recargoConvencionales = pRecargo;        
     }
 
-    // public Convencional(String pNombre, double pPrecio, int pGramosVenta, boolean pImportada){
-    //     this(pNombre, pPrecio);
-    //     super.gramosVenta = pGramosVenta;
-    //     super.importada = pImportada;
-    // }
-
     public Convencional(String pNombre, double pPrecio, int pGramosVenta, boolean pImportada){
-        super(pNombre, pPrecio, pGramosVenta, pImportada);
-        this.recargoConvencionales = Convencional.RECARGO_CONVENCIONALES_BASE;
+        this(pNombre, pPrecio);
+        super.gramosVenta = pGramosVenta;
+        super.importada = pImportada;
     }
+
+    // public Convencional(String pNombre, double pPrecio, int pGramosVenta, boolean pImportada){
+    //     super(pNombre, pPrecio, pGramosVenta, pImportada);
+    //     this.recargoConvencionales = Convencional.RECARGO_CONVENCIONALES_BASE;
+    // }
 
     //Método -> Requerimiento
     public double calcularPrecio(){
         double precioVerdura = super.calcularPrecio();
-        double precioConvencional = precioVerdura + precioVerdura * this.recargoConvencionales;
+        double precioConvencional = precioVerdura + (precioVerdura * this.recargoConvencionales);
         precioConvencional += precioVerdura * (0.01 * this.gradoAditamentos);
         return precioConvencional;
     }
