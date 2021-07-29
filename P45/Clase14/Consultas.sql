@@ -96,6 +96,85 @@ SELECT  LOWER(SUBSTR(Lider.Nombre, 1, 1)) || "." ||
 FROM Lider
 ORDER BY LENGTH(email_lider) DESC;
 
+-- RQ: Edad promedio de los líderes redondeada.
+
+--Calcular edades de los líderes
+SELECT  DATETIME('now') - Lider.Fecha_Nacimiento as Edad_Lider,
+        Lider.Nombre,
+        Lider.Fecha_Nacimiento
+FROM Lider;
+
+-- RQ Edad promedio
+SELECT ROUND(AVG(DATETIME('now') - Lider.Fecha_Nacimiento)) as Promedio_Lideres        
+FROM Lider;
+
+SELECT * FROM Proyecto LIMIT 10;
+
+-- JOIN -> Ampliar entidades -> Contrario a normalizar.
+
+SELECT * FROM Proyecto p
+JOIN Tipo t ON
+p.ID_Tipo = t.ID_Tipo
+LIMIT 10;
+
+SELECT * FROM Proyecto
+JOIN Tipo ON
+Proyecto.ID_Tipo = Tipo.ID_Tipo;
+
+SELECT  p.ID_Proyecto,
+        p.Constructora,
+        p.Banco_Vinculado,
+        t.Area_Max,
+        t.Estrato,
+        t.Financiable
+FROM Proyecto p
+JOIN Tipo t ON
+p.ID_Tipo = t.ID_Tipo;
+
+-- Área promedio de los proyectos que respalda cada banco.
+-- Agrupamiento y agregación sobre el resultado de un JOIN.
+-- Ranking de los bancos según el área promedio de mayor a menor.
+
+SELECT  p.Banco_Vinculado,
+        AVG(t.Area_Max) as Area_Promedio_Proyectos,
+        COUNT(*) as Numero_Proyectos        
+FROM Proyecto p 
+JOIN Tipo t ON
+p.ID_Tipo = t.ID_Tipo
+GROUP BY p.Banco_Vinculado
+ORDER BY Numero_Proyectos DESC, Area_Promedio_Proyectos DESC;
+
+-- Pendiente anidación
+
+SELECT  Banco_Vinculado,
+        Area_Promedio_Proyectos,
+        Numero_Proyectos,
+        ROUND(Area_Promedio_Proyectos / Numero_Proyectos ) as Indicador
+FROM (
+      SELECT  p.Banco_Vinculado,
+              AVG(t.Area_Max) as Area_Promedio_Proyectos,
+              COUNT(*) as Numero_Proyectos        
+      FROM Proyecto p 
+      JOIN Tipo t ON
+      p.ID_Tipo = t.ID_Tipo
+      GROUP BY p.Banco_Vinculado
+      ORDER BY Numero_Proyectos DESC, Area_Promedio_Proyectos DESC
+);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
