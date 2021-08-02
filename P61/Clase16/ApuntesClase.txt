@@ -1,0 +1,8 @@
+Temas Clase
+-----------
+
+- Reto2 del otro grupo (muy parecido: contexto distinto y una variación en el requerimiento)
+    - Utilizamos la clase de la cual se hereda -> Generalización.
+    - En la especialización de la clase (heredan) -> Campos protegidos.
+    - Polimorfismo entre clases -> Específicamente en una relación de herencia.
+    - Coleccionar objetos de cualquiera de las clases: tipo super clase o clases especializadas.
