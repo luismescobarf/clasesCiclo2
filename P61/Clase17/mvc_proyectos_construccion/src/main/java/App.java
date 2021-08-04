@@ -1,6 +1,7 @@
 import util.JDBCUtilities;
 import java.sql.Connection;
 import java.sql.SQLException;
+import view.MenuLider;
 
 /**
  * Aplicación Proyectos Construcción
@@ -20,6 +21,7 @@ public class App {
 
             //Iniciaríamos nuestra aplicación
             //Llamado al menú de inicio de la vista/view
+            MenuLider.iniciar();
 
             
         }catch( SQLException e ){
