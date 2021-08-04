@@ -17,6 +17,10 @@ public class ControladorProyectosConstruccion {
     public ArrayList<Lider> consultarTodosLideres() throws SQLException {
         return this.liderDao.consultarTodos();
     }
+
+    public Lider encontrarLider(Integer idLider) throws SQLException {
+        return this.liderDao.consultarLiderID(idLider);
+    }
     
     
 }

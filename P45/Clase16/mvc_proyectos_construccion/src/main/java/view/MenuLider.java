@@ -27,7 +27,7 @@ public class MenuLider {
             if(opcionIngresada == 1){
                 listar();
             }else if(opcionIngresada == 2){
-                System.out.println("En construcción!!!!!");
+                consultar();
             }else if(opcionIngresada == 3){
                 System.out.println("Salida exitosa.");
                 mainloop = false;
@@ -68,5 +68,43 @@ public class MenuLider {
         // }
 
     }
+
+    public static void consultar(){
+
+        System.out.println("----Consultar Líder (ID)-----");
+        Scanner lector = new Scanner(System.in);
+        System.out.print("Ingrese el ID del Líder: ");
+        Integer idLider = lector.nextInt();
+
+        try{
+            Lider lider = controlador.encontrarLider(idLider);
+
+            if(lider != null){
+                System.out.println("ID_Lider Nombre Primer_Apellido Segundo_Apellido Salario Clasificación");
+                System.out.printf("%d\t%s\t%s\t%s\t%d\t%d %n",
+                    lider.getIdLider(),
+                    lider.getNombre(),
+                    lider.getPrimerApellido(),
+                    lider.getSegundoApellido(),
+                    lider.getSalario(),
+                    Math.round(lider.getClasificacion())
+                );
+            }else{
+                System.out.println("El líder con ID "+idLider+" no fue encontrado!");
+            }            
+        
+        //Diferenciando el error que puede suceder en este contexto
+        }catch(SQLException e){
+            System.err.println("Error consultando todos los líderes!! "+e.getMessage());
+        }catch(IllegalFormatConversionException f){
+            System.err.println("Error con los tipos del formato de impresión!! "+f.getMessage());
+        }
+
+        
+
+    }
+
     
 }
+
+
