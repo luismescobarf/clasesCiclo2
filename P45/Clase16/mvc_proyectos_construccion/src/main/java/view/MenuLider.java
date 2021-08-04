@@ -3,6 +3,7 @@ package view;
 import java.util.Scanner;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.IllegalFormatConversionException;
 import controller.ControladorProyectosConstruccion;
 import model.vo.Lider;
 
@@ -53,9 +54,18 @@ public class MenuLider {
                     Math.round(lider.getClasificacion())
                 );
             }
+        
+        //Diferenciando el error que puede suceder en este contexto
         }catch(SQLException e){
             System.err.println("Error consultando todos los líderes!! "+e.getMessage());
+        }catch(IllegalFormatConversionException f){
+            System.err.println("Error con los tipos del formato de impresión!! "+f.getMessage());
         }
+
+        // //Generalizando los posibles errores
+        // }catch(IllegalFormatConversionException | SQLException e){
+        //     System.err.println("Error consultando o formateando->  "+e.getMessage());
+        // }
 
     }
     
