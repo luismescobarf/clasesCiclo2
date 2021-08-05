@@ -101,6 +101,7 @@ ORDER BY Numero_Proyectos DESC;
 -- compras se han hecho de cada uno. 
 -- Desempatar alfabéticamente.
 
+--Freddie y Mónica
 SELECT  mc.Nombre_Material, 
         mc.Importado,
         COUNT(c.ID_Compra) as No_Compras
@@ -111,6 +112,17 @@ WHERE mc.Importado = "Si"
 GROUP BY mc.ID_MaterialConstruccion
 ORDER BY    No_Compras DESC, 
             mc.Nombre_Material;
+
+--Mauricio
+SELECT mc.Nombre_Material , 
+mc.Importado ,
+COUNT(mc.ID_MaterialConstruccion) AS No_Compras 
+FROM MaterialConstruccion mc 
+JOIN Compra c 
+ON mc.ID_MaterialConstruccion = c.ID_MaterialConstruccion 
+WHERE mc.Importado LIKE 'si'
+GROUP BY mc.ID_MaterialConstruccion
+ORDER BY No_Compras DESC, Nombre_Material ASC;
 
 
 
