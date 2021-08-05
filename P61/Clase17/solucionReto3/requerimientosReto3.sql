@@ -96,6 +96,22 @@ FROM
 GROUP BY p.Constructora
 ORDER BY Numero_Proyectos DESC;
 
+-- Requerimiento 5: Los materiales importados más 
+-- comprados en los proyectos, mostrando cuántas 
+-- compras se han hecho de cada uno. 
+-- Desempatar alfabéticamente.
+
+SELECT  mc.Nombre_Material, 
+        mc.Importado,
+        COUNT(c.ID_Compra) as No_Compras
+FROM Compra c 
+inner JOIN MaterialConstruccion mc 
+ON mc.ID_MaterialConstruccion = c.ID_MaterialConstruccion  
+WHERE mc.Importado = "Si"
+GROUP BY mc.ID_MaterialConstruccion
+ORDER BY    No_Compras DESC, 
+            mc.Nombre_Material;
+
 
 
 
