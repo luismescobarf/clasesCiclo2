@@ -2,6 +2,7 @@ package view;
 
 import java.sql.SQLException;
 import controller.ControladorProyectosConstruccion;
+import model.vo.BancoRankeadoAreaPromedio;
 import model.vo.Lider;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -11,8 +12,33 @@ public class MenuLider {
     //Atributo -> Controlador necesario para el funcionamiento de la vista
     public static final ControladorProyectosConstruccion controlador = new ControladorProyectosConstruccion();
 
+    //Listar todos los líderes
+    public static void mostrarRequerimiento3(){
+
+        //Encabezado
+        System.out.println("Banco_Vinculado Area_Promedio");        
+        System.out.println("--------------- --------------");        
+
+        try{
+            
+            ArrayList<BancoRankeadoAreaPromedio> bancos = controlador.requerimiento3();
+            for (BancoRankeadoAreaPromedio banco : bancos) {
+                
+                System.out.printf("%s\t%f %n", 
+                    banco.getBancoVinculado(),
+                    banco.getAreaPromedio()
+                );
+
+            }
+
+        }catch(SQLException e){
+            System.err.println( "Error recibido al rankear los bancos: " + e.getMessage() );
+        }
+
+    }
+
     //Menú principal de los líderes
-    public static void iniciar(){
+    public static void iniciar(){        
 
         boolean mainloop = true;
         Scanner lector = new Scanner(System.in);

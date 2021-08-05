@@ -21,7 +21,9 @@ public class App {
 
             //Iniciaríamos nuestra aplicación
             //Llamado al menú de inicio de la vista/view
-            MenuLider.iniciar();
+            //MenuLider.iniciar();
+
+            MenuLider.mostrarRequerimiento3();
 
             
         }catch( SQLException e ){
