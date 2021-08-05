@@ -84,4 +84,25 @@ ORDER BY No_Compras DESC,
         m.Nombre_Material ASC;
 
 
+-- Requerimiento4: Los 5 proyectos donde más pedidos (compras) 
+-- se han realizado de Granito. Adjuntar la clasificación del 
+-- proyecto y el área máxima del tipo en el que ha sido 
+-- clasificado.
+
+SELECT  p.ID_Proyecto,
+        p.Clasificacion,
+        t.Area_Max,
+        COUNT(m.Nombre_Material) as No_Compras_Granito
+FROM Proyecto p
+JOIN Compra c ON
+p.ID_Proyecto = c.ID_Proyecto
+JOIN MaterialConstruccion m ON
+m.ID_MaterialConstruccion = c.ID_MaterialConstruccion
+JOIN Tipo t ON
+p.ID_Tipo = t.ID_Tipo
+WHERE m.Nombre_Material LIKE "Granito"
+GROUP BY p.ID_Proyecto
+ORDER BY No_Compras_Granito DESC
+LIMIT 5;
+
 
