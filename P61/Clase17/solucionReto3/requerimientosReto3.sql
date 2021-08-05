@@ -65,6 +65,41 @@ where Clasificacion not in(2,5)
 order by    Clasificacion DESC,
             l.ID_Lider;
 
+-- Requerimiento3: Bancos ordenados de mayor a menor según el 
+-- área de construcción promedio de los proyectos que respaldan.
+
+--Mónica
+SELECT  p.Banco_Vinculado,
+	    AVG(t.Area_Max) as Area_Promedio
+FROM Proyecto p
+JOIN Tipo t ON
+	p.ID_Tipo = t.ID_Tipo
+GROUP BY p.Banco_Vinculado 
+ORDER BY Area_Promedio DESC;
+
+-- Requerimiento4: Ranking de las constructoras 
+-- que tienen el mayor número de proyectos a cargo.
+
+--Edgar
+SELECT  p.Constructora, 
+        COUNT(ID_Proyecto) as Numero_Proyectos        
+FROM
+    Proyecto p
+GROUP BY p.Constructora
+ORDER BY Numero_Proyectos DESC;
+
+--Mónica
+SELECT  p.Constructora, 
+        COUNT(1) as Numero_Proyectos        
+FROM
+    Proyecto p
+GROUP BY p.Constructora
+ORDER BY Numero_Proyectos DESC;
+
+
+
+
+
 
 
 
