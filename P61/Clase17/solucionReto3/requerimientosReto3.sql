@@ -1,15 +1,17 @@
-Temas Clase
------------
+--- Requerimiento 1: ¿Cuáles son los 10 proyectos ordenados de mayor a 
+--- menor donde más dinero se ha invertido en compra de materiales?
 
-- Enunciado e inquietudes Reto3 -> A punto de subirse pero está disponible en Telegram desde el sábado.
-- Conexión/Interacción a la base de datos desde SW (API JDBC) -> Patrón de diseño Modelo Vista Controlador (MVC)
-    - Se aplicará sobre caso del Reto3 -> Proyectos y Líderes.
-
-Enlaces de Interés:
--------------------
-Repositorio de Maven:
-https://mvnrepository.com/
-SQLite para JDBC:
-https://mvnrepository.com/artifact/org.xerial/sqlite-jdbc
+SELECT  p.ID_Proyecto,
+        p.Clasificacion,
+        sum( c.Cantidad * m.Precio_Unidad ) as Gasto_Compras,
+        p.Serial
+FROM Proyecto p
+JOIN Compra c ON
+p.ID_Proyecto = c.ID_Proyecto
+JOIN MaterialConstruccion m ON
+c.ID_MaterialConstruccion = m.ID_MaterialConstruccion
+GROUP BY p.ID_Proyecto
+ORDER BY Gasto_Compras DESC
+LIMIT 10;
 
 
