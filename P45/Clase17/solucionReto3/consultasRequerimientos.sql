@@ -105,4 +105,25 @@ GROUP BY p.ID_Proyecto
 ORDER BY No_Compras_Granito DESC
 LIMIT 5;
 
+-- Requerimiento 5: Los dos cargos que lideran menos proyectos
+SELECT  l.Cargo,
+        COUNT(*) as Numero_Proyectos
+FROM Lider l
+JOIN Proyecto p ON
+l.ID_Lider = p.ID_Lider
+GROUP BY l.Cargo
+ORDER BY Numero_Proyectos ASC;
+
+
+SELECT l.Cargo,
+        COUNT (p.ID_Proyecto) AS Numero_Proyectos
+FROM Proyecto p 
+JOIN Lider l ON
+p.ID_Lider = l.ID_Lider
+GROUP BY l.Cargo
+ORDER BY Numero_Proyectos;
+
+
+
+
 
