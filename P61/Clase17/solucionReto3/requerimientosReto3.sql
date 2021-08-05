@@ -42,5 +42,29 @@ GROUP BY c.ID_Proyecto
 ORDER BY Gasto_Compras DESC 
 LIMIT 10;
 
+-- Requerimiento 2: Listado de los líderes que no son ni 
+-- clasificación 2 ni clasificación 5. 
+-- Ordenarlos de mayor a menor según la clasificación, 
+-- y cada clasificación ordenarla de MENOR A MAYOR (error enunciado) 
+-- según el identificador del líder del proyecto.
+
+SELECT  l.ID_Lider,
+        l.Nombre,
+        l.Primer_Apellido,
+        l.Clasificacion
+FROM Lider l
+WHERE l.Clasificacion != 2 AND l.Clasificacion != 5
+ORDER BY    l.Clasificacion DESC,
+            l.ID_Lider ASC;
+
+--Freddie
+select  l.ID_Lider,l.Nombre, 
+        l.Primer_Apellido,
+        l.Clasificacion from Lider l
+where Clasificacion not in(2,5)
+order by    Clasificacion DESC,
+            l.ID_Lider;
+
+
 
 
