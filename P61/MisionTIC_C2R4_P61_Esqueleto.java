@@ -110,26 +110,26 @@ public class ControladorRequerimientosReto4 {
 
     public ControladorRequerimientosReto4(){
         //.
-		//.
-		//.
+        //.
+        //.
     }
 
     public ArrayList<ProyectoRankeadoCompras> consultarProyectosCompras10() throws SQLException {
         //.
-		//.
-		//.
+        //.
+        //.
     }
     
     public ArrayList<BancoRankeadoAreaPromedio> consultarBancosRankeadosAreaPromedio() throws SQLException {
         //.
-		//.
-		//.
+        //.
+        //.
     }
 
     public ArrayList<MaterialRankeadoCompras> consultarMaterialesRankeadosCompras() throws SQLException {
         //.
-		//.
-		//.
+        //.
+        //.
     }
 
     
@@ -142,8 +142,8 @@ public class ProyectoRankeadoComprasDao {
     public ArrayList<ProyectoRankeadoCompras> rankingProyectosComprasDescendente10() throws SQLException {
 
         //.
-		//.
-		//.
+        //.
+        //.
         
     } 
     
@@ -155,8 +155,8 @@ public class BancoRankeadoAreaPromedioDao {
     public ArrayList<BancoRankeadoAreaPromedio> rankingBancosAreaPromedioDescendente() throws SQLException {
 
         //.
-		//.
-		//.
+        //.
+        //.
         
     }  
     
@@ -168,8 +168,8 @@ public class MaterialRankeadoComprasDao {
     public ArrayList<MaterialRankeadoCompras> rankingMaterialesComprasDescendente() throws SQLException {
 
         //.
-		//.
-		//.
+        //.
+        //.
         
     }
         
@@ -179,24 +179,24 @@ public class MaterialRankeadoComprasDao {
 public class ProyectoRankeadoCompras {
 
     //.
-	//.
-	//.
+    //.
+    //.
     
 }
 
 public class BancoRankeadoAreaPromedio {
 
     //.
-	//.
-	//.
+    //.
+    //.
     
 }
 
 public class MaterialRankeadoCompras {
 
     //.
-	//.
-	//.
+    //.
+    //.
     
 }
 
@@ -216,5 +216,3 @@ public class JDBCUtilities {
     }
 
 }
-
-
