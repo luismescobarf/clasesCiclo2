@@ -51,15 +51,9 @@ public class VistaRequerimientosReto4 {
             //Encabezado del resultado
             System.out.println("ID_Proyecto Clasificación Gasto_Compras Serial");
             
-            //Cada VO cargado, mostrarlo en la vista
-            for (ProyectoRankeadoCompras proyectoRankeado : rankingProyectosCompras) {
-                System.out.printf("%d %s %d %s %n", 
-                    proyectoRankeado.getIdProyecto(), 
-                    proyectoRankeado.getClasificacion(), 
-                    Math.round(proyectoRankeado.getGastoCompras()), 
-                    proyectoRankeado.getSerial()
-                );   
-            }
+            //.
+            //.
+            //.
 
         }catch(SQLException e){
             System.err.println("Ha ocurrido un error!"+e.getMessage());
@@ -75,16 +69,9 @@ public class VistaRequerimientosReto4 {
 
             ArrayList<BancoRankeadoAreaPromedio> rankingBancosArea = controlador.consultarBancosRankeadosAreaPromedio();
 
-            //Encabezado del resultado
-            System.out.println("Banco_Vinculado Area_Promedio");
-            
-            //Cada VO cargado, mostrarlo en la vista
-            for (BancoRankeadoAreaPromedio banco : rankingBancosArea) {
-                System.out.printf("%s %f %n", 
-                    banco.getBancoVinculado(), 
-                    banco.getAreaPromedio()                    
-                );   
-            }
+            //.
+            //.
+            //.
 
         }catch(SQLException e){
             System.err.println("Ha ocurrido un error!"+e.getMessage());
@@ -100,17 +87,9 @@ public class VistaRequerimientosReto4 {
 
             ArrayList<MaterialRankeadoCompras> rankingMaterialesImportados = controlador.consultarMaterialesRankeadosCompras();
 
-            //Encabezado del resultado
-            System.out.println("Nombre_Material Importado No_Compras");
-            
-            //Cada VO cargado, mostrarlo en la vista
-            for (MaterialRankeadoCompras material : rankingMaterialesImportados) {
-                System.out.printf("%s %s %d %n", 
-                    material.getNombreMaterial(),
-                    material.getImportado(),
-                    material.getNoCompras()              
-                );   
-            }
+            //.
+            //.
+            //.
 
         }catch(SQLException e){
             System.err.println("Ha ocurrido un error!"+e.getMessage());
