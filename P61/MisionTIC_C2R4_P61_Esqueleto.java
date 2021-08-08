@@ -1,5 +1,3 @@
-package utp.misiontic2022.c2.retos;
-
 //Librerías
 import java.util.ArrayList;
 import java.io.File;
@@ -9,10 +7,14 @@ import java.sql.SQLException;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
-//Recordar que esta clase que contiene el main no debe ser subida.
-//Se utiliza como ejemplo para los llamados.
-//Tampoco incluir los System.out.println(); 
-//se sugieren como separadores mientras se realizan pruebas
+//****************************************************************
+//- Recordar que la clase que contiene el main no debe ser subida.
+//- El main se utiliza como ejemplo para los llamados.
+//- Tampoco incluir los System.out.println(); 
+//  se sugieren como separadores mientras se realizan pruebas.
+//- Al subir el reto la base de datos está en la ubicación ofrecida
+//  en este esqueleto.
+//****************************************************************
 public class MisionTIC_C2R4_P61_Casos {
     public static void main( String[] args ){
 		
@@ -28,8 +30,7 @@ public class MisionTIC_C2R4_P61_Casos {
 
         //Requerimiento 5 - Reto3
         VistaRequerimientosReto4.requerimiento5();
-        System.out.println();
-        
+        System.out.println();        
         
     }    
 }
