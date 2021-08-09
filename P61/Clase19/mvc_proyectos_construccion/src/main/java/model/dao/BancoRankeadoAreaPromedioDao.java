@@ -17,7 +17,7 @@ public class BancoRankeadoAreaPromedioDao {
     //Operaciones CRUD -> Create Read Update Delete
 
     //Consultar todos los líderes (READ)
-    public ArrayList<BancoRankeadoAreaPromedio> consultarBancosAreaPromedioDesc() throws SQLException {
+    public ArrayList<BancoRankeadoAreaPromedio> rankingBancosAreaPromedioDescendente() throws SQLException {
 
         //Contenedor de la respuesta -> Colección de líderes
         ArrayList<BancoRankeadoAreaPromedio> respuesta = new ArrayList<BancoRankeadoAreaPromedio>();

@@ -1,30 +1,59 @@
 package view;
 
 import java.sql.SQLException;
-import controller.ControladorProyectosConstruccion;
+import controller.ControladorRequerimientosReto4;
+import model.vo.ProyectoRankeadoCompras;
 import model.vo.BancoRankeadoAreaPromedio;
-import model.vo.Lider;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class MenuLider {
+public class VistaRequerimientosReto4 {
 
     //Atributo -> Controlador necesario para el funcionamiento de la vista
-    public static final ControladorProyectosConstruccion controlador = new ControladorProyectosConstruccion();
+    public static final ControladorRequerimientosReto4 controlador = new ControladorRequerimientosReto4();
 
-    //Listar todos los líderes
-    public static void mostrarRequerimiento3(){
+    public static void requerimiento1(){
 
-        //Encabezado
-        System.out.println("Banco_Vinculado Area_Promedio");        
-        System.out.println("--------------- --------------");        
+        System.out.println("-----10 Proyectos Mayor Gasto-------");       
 
         try{
+
+            ArrayList<ProyectoRankeadoCompras> rankingProyectosCompras = controlador.consultarProyectosCompras10();
+
+            //Encabezado del resultado
+            System.out.println("ID_Proyecto Clasificación Gasto_Compras Serial");            
             
-            ArrayList<BancoRankeadoAreaPromedio> bancos = controlador.requerimiento3();
+            for (ProyectoRankeadoCompras proyecto : rankingProyectosCompras) {
+                
+                System.out.printf("%d %s %d %s %n", 
+                    proyecto.getIdProyecto(),
+                    proyecto.getClasificacion(),
+                    proyecto.getGastoCompras(),
+                    proyecto.getSerial()
+                );
+
+            }
+
+        }catch(SQLException e){
+            System.err.println("Ha ocurrido un error!"+e.getMessage());
+        }
+
+    }
+
+    //Listar todos los líderes
+    public static void requerimiento3(){
+
+        //Encabezado
+        System.out.println("-----Ranking Descendente Bancos (Área Proyectos)-------");             
+
+        try{
+
+            System.out.println("Banco_Vinculado Area_Promedio");
+            
+            ArrayList<BancoRankeadoAreaPromedio> bancos = controlador.consultarBancosRankeadosAreaPromedio();
             for (BancoRankeadoAreaPromedio banco : bancos) {
                 
-                System.out.printf("%s\t%f %n", 
+                System.out.printf("%s %f %n", 
                     banco.getBancoVinculado(),
                     banco.getAreaPromedio()
                 );
@@ -32,7 +61,7 @@ public class MenuLider {
             }
 
         }catch(SQLException e){
-            System.err.println( "Error recibido al rankear los bancos: " + e.getMessage() );
+            System.err.println("Ha ocurrido un error!"+e.getMessage());
         }
 
     }
@@ -52,7 +81,7 @@ public class MenuLider {
             System.out.print("Ingresar opción: ");
             int opcionIngresada = lector.nextInt();
             if(opcionIngresada == 1){
-                listar();
+                //listar();
             }else if(opcionIngresada == 2){
                 System.out.println("En construcción: 2. Consultar líder por ID");
             }else if(opcionIngresada == 3){
@@ -68,41 +97,8 @@ public class MenuLider {
 
         }while(mainloop);
 
-    }
+    }    
 
-    //Listar todos los líderes
-    public static void listar(){
-
-        //Encabezado
-        System.out.println("ID_Lider Nombre Primer_Apellido Segundo_Apellido Salario Clasificación");        
-        System.out.println("-------- ------ --------------- ---------------- ------- -------------");        
-
-        try{
-            
-            ArrayList<Lider> lideres = controlador.consultarTodosLideres();
-            for (Lider lider : lideres) {
-                
-                System.out.printf("%d\t%s\t%s\t%s\t%d\t%d\t %n", 
-                    lider.getIdLider(),
-                    lider.getNombre(),
-                    lider.getPrimerApellido(),
-                    lider.getSegundoApellido(),
-                    lider.getSalario(),
-                    Math.round(lider.getClasificacion())
-                );
-
-            }
-
-        }catch(SQLException e){
-            System.err.println( "Error recibido al listar: " + e.getMessage() );
-        }
-
-    }
-
-    //Consultar por id un líder
-
-    //Guardar líder
-
-    //Remover líder
+    
     
 }
