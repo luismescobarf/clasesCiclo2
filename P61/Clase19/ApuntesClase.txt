@@ -1,7 +1,7 @@
 Temas Clase
 -----------
 
-- Revisar error Reto3.
+- Revisar error Reto3.*
 - Revisar Reto4 (Estructura desarrollo y subida)
 - Introducción a GUI -> Llamar consultas (texto) con botones -> Aplicadas al Reto4 -> Reto5.
 
