@@ -4,6 +4,7 @@ import java.sql.SQLException;
 import controller.ControladorRequerimientosReto4;
 import model.vo.ProyectoRankeadoCompras;
 import model.vo.BancoRankeadoAreaPromedio;
+import model.vo.MaterialRankeadoCompras;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -40,7 +41,7 @@ public class VistaRequerimientosReto4 {
 
     }
 
-    //Listar todos los líderes
+    //Listar los bancos
     public static void requerimiento3(){
 
         //Encabezado
@@ -59,6 +60,35 @@ public class VistaRequerimientosReto4 {
                 );
 
             }
+
+        }catch(SQLException e){
+            System.err.println("Ha ocurrido un error!"+e.getMessage());
+        }
+
+    }
+
+    public static void requerimiento5(){
+
+        System.out.println("-----Ranking Descendente Materiales Importados (Compras)-------");       
+
+        try{
+
+            ArrayList<MaterialRankeadoCompras> rankingMaterialesImportados = controlador.consultarMaterialesRankeadosCompras();
+
+            System.out.println("Nombre_Material Importado No_Compras");
+            
+            ArrayList<MaterialRankeadoCompras> materiales = controlador.consultarMaterialesRankeadosCompras();
+            for (MaterialRankeadoCompras material : materiales) {
+                
+                System.out.printf("%s %s %d %n", 
+                    material.getNombreMaterial(),
+                    material.getImportado(),
+                    material.getNoCompras()
+                );
+
+            }
+
+            
 
         }catch(SQLException e){
             System.err.println("Ha ocurrido un error!"+e.getMessage());

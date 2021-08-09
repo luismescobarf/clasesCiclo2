@@ -19,6 +19,10 @@ public class App {
         VistaRequerimientosReto4.requerimiento3();
         System.out.println();
 
+        //Requerimiento 5 - Reto3
+        VistaRequerimientosReto4.requerimiento5();
+        System.out.println();     
+
         // //Intentar conectarnos a la base de datos
         // try(Connection conexion = JDBCUtilities.getConnection()){
             

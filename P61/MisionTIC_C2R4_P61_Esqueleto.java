@@ -69,6 +69,9 @@ public class VistaRequerimientosReto4 {
 
             ArrayList<BancoRankeadoAreaPromedio> rankingBancosArea = controlador.consultarBancosRankeadosAreaPromedio();
 
+            //Encabezado del resultado
+            System.out.println("Banco_Vinculado Area_Promedio");
+
             //.
             //.
             //.
@@ -86,6 +89,9 @@ public class VistaRequerimientosReto4 {
         try{
 
             ArrayList<MaterialRankeadoCompras> rankingMaterialesImportados = controlador.consultarMaterialesRankeadosCompras();
+
+            //Encabezado del resultado
+            System.out.println("Nombre_Material Importado No_Compras");
 
             //.
             //.
@@ -151,7 +157,7 @@ public class ProyectoRankeadoComprasDao {
 
 public class BancoRankeadoAreaPromedioDao {
 
-    //Obtener los 10 proyectos rankeados según las compras
+    //Obtener los bancos rankeados por área promedio de los proyectos que respaldan
     public ArrayList<BancoRankeadoAreaPromedio> rankingBancosAreaPromedioDescendente() throws SQLException {
 
         //.
@@ -164,7 +170,7 @@ public class BancoRankeadoAreaPromedioDao {
 
 public class MaterialRankeadoComprasDao {
 
-    //Obtener los 10 proyectos rankeados según las compras
+    //Obtener los importados más comprados
     public ArrayList<MaterialRankeadoCompras> rankingMaterialesComprasDescendente() throws SQLException {
 
         //.

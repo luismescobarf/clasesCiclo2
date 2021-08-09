@@ -1,7 +1,6 @@
 package model.dao;
 
 import model.vo.BancoRankeadoAreaPromedio;
-import model.vo.Lider;
 import java.util.ArrayList;
 import util.JDBCUtilities;
 import java.sql.Connection;
