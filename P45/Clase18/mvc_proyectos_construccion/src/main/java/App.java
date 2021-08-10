@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.sql.Connection;
 import java.sql.SQLException;
 
-import view.MenuLider;
+import view.VistaRequerimientosReto4;
 
 /**
  * SW Proyectos Construcción 
@@ -14,8 +14,22 @@ import view.MenuLider;
 public class App {
     public static void main( String[] args ){
 
-        //Iniciar mainloop de la aplicación (consola o con GUI)
-        MenuLider.menuInicial();
+        //Casos de prueba 
+
+        //Requerimiento 3 - Reto3
+        VistaRequerimientosReto4.requerimiento3();
+        System.out.println();
+
+        //Requerimiento 4 - Reto3
+        VistaRequerimientosReto4.requerimiento4();
+        System.out.println();
+
+        //Requerimiento 5 - Reto3
+        VistaRequerimientosReto4.requerimiento5();
+        System.out.println();
+
+        // //Iniciar mainloop de la aplicación (consola o con GUI)
+        // MenuLider.menuInicial();
         
         // try( Connection conexion = JDBCUtilities.getConnection() ){
             
