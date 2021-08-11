@@ -14,6 +14,7 @@ import java.util.ArrayList;
 
 import view.MenuRequerimientosGUI;
 import view.Requerimiento1GUI;
+import view.Requerimiento2GUI;
 
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
@@ -28,6 +29,7 @@ public class ControladorRequerimientosReto4 implements ActionListener {
     private final CargoAsignacionDao cargoAsignacionDao;
     private MenuRequerimientosGUI menuRequerimientosGUI;
     private Requerimiento1GUI requerimiento1gui;
+    private Requerimiento2GUI requerimiento2gui;
 
     public ControladorRequerimientosReto4(){
         this.materialNacionalDao = new MaterialNacionalDao();
@@ -60,9 +62,9 @@ public class ControladorRequerimientosReto4 implements ActionListener {
         //Caminos según el evento ocurrido
         switch(actionCommand){
             case "requerimiento1":
-                System.out.println("Requerimiento 1 en construcción!");                
+                //System.out.println("Requerimiento 1 en construcción!");                
                 try{
-                    VistaRequerimientosReto4.requerimiento3b(this.consultarMaterialesNacionalesComprados());    
+                    //VistaRequerimientosReto4.requerimiento3b(this.consultarMaterialesNacionalesComprados());    
                     this.requerimiento1gui = new Requerimiento1GUI( this.consultarMaterialesNacionalesComprados(), 
                                                                     this);                    
                 }catch(SQLException excepcion){
@@ -71,6 +73,14 @@ public class ControladorRequerimientosReto4 implements ActionListener {
             break;
             case "requerimiento2":
                 System.out.println("Requerimiento 2 en construcción!"); 
+                //System.out.println("Requerimiento 1 en construcción!");                
+                try{
+                    //VistaRequerimientosReto4.requerimiento3b(this.consultarMaterialesNacionalesComprados());    
+                    this.requerimiento2gui = new Requerimiento2GUI( this.consultarProyectosComprasGranito(), 
+                                                                    this);                    
+                }catch(SQLException excepcion){
+                    System.err.println("Problemas consultando req2: " + excepcion);
+                }  
             break;
             case "requerimiento3":
                 System.out.println("Requerimiento 3 en construcción!");
