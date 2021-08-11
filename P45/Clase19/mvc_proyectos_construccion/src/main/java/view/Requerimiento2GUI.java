@@ -16,6 +16,7 @@ import javax.swing.JScrollBar;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.border.TitledBorder;
+import java.awt.GridLayout;
 
 
 //GUI
@@ -32,10 +33,12 @@ public class Requerimiento2GUI extends JFrame {
     //Alternativas  -> Constructor
     //              -> Método
 
-    public Requerimiento2GUI(ArrayList<ProyectoRankeadoCompras> proyectos, ControladorRequerimientosReto4 controlador){
+    public Requerimiento2GUI(ArrayList<ProyectoRankeadoCompras> proyectos, ControladorRequerimientosReto4 controlador){        
         
+        setLayout(new GridLayout());
+
         //Título
-        //super.setTitle("Menú Inicial Requerimientos");
+        //super.setTitle("Menú Inicial Requerimientos");        
         setTitle("-----Proyectos Mayor Compra Granito-------");
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         String[] encabezados = {"ID_Proyecto","Clasificación","Area_Max","No_Compras_Granito"};        
@@ -46,7 +49,7 @@ public class Requerimiento2GUI extends JFrame {
         
 
         JScrollPane sp = new JScrollPane(jtTablaRequerimiento1);
-        JPanel panel = new JPanel();
+        JPanel panel = new JPanel( new GridLayout() );
         panel.add(sp);  
         panel.setBorder(new TitledBorder("Compras Granito"));      
         getContentPane().add(panel);//Incorporar tabla

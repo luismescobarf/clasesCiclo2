@@ -15,6 +15,7 @@ import javax.swing.JPanel;
 import javax.swing.JScrollBar;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
+import java.awt.Dimension;
 
 
 //GUI
@@ -43,11 +44,15 @@ public class Requerimiento1GUI extends JFrame {
                                             encabezados 
                                     );
         
-
+        
         JScrollPane sp = new JScrollPane(jtTablaRequerimiento1);
-        // JPanel panel = new JPanel();
-        // panel.add(sp);        
-        getContentPane().add(sp);//Incorporar tabla
+        JPanel panel = new JPanel();
+        sp.setPreferredSize(new Dimension(200, 100)  );
+        panel.add(sp);  
+        
+        
+        //getContentPane().add(sp);//Incorporar tabla
+        getContentPane().add(panel);//Incorporar tabla
 
         //Propiedades de la ventana
         setSize(600,400);
