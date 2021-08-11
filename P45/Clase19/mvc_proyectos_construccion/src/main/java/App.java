@@ -4,8 +4,10 @@ import java.io.IOException;
 //Librerías para el manejo de la base de datos
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.util.ResourceBundle.Control;
 
 import view.VistaRequerimientosReto4;
+import controller.ControladorRequerimientosReto4;
 
 /**
  * SW Proyectos Construcción 
@@ -14,19 +16,23 @@ import view.VistaRequerimientosReto4;
 public class App {
     public static void main( String[] args ){
 
-        //Casos de prueba 
+        //Instanciar controlador e iniciarlo
+        ControladorRequerimientosReto4 controlador = new ControladorRequerimientosReto4();
+        controlador.inicio();
 
-        //Requerimiento 3 - Reto3
-        VistaRequerimientosReto4.requerimiento3();
-        System.out.println();
+        // //Casos de prueba 
 
-        //Requerimiento 4 - Reto3
-        VistaRequerimientosReto4.requerimiento4();
-        System.out.println();
+        // //Requerimiento 3 - Reto3
+        // VistaRequerimientosReto4.requerimiento3();
+        // System.out.println();
 
-        //Requerimiento 5 - Reto3
-        VistaRequerimientosReto4.requerimiento5();
-        System.out.println();
+        // //Requerimiento 4 - Reto3
+        // VistaRequerimientosReto4.requerimiento4();
+        // System.out.println();
+
+        // //Requerimiento 5 - Reto3
+        // VistaRequerimientosReto4.requerimiento5();
+        // System.out.println();
 
         // //Iniciar mainloop de la aplicación (consola o con GUI)
         // MenuLider.menuInicial();

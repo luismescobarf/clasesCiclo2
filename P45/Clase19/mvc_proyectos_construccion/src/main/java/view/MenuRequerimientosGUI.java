@@ -9,12 +9,66 @@ import model.vo.MaterialNacional;
 import model.vo.ProyectoRankeadoCompras;
 import model.vo.CargoAsignacion;
 
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
 
-public class VistaRequerimientosReto4 {
+
+//GUI
+public class MenuRequerimientosGUI extends JFrame {
 
     //Controlador
     //public static final ControladorProyectosConstruccion controlador = new ControladorProyectosConstruccion();
     public static final ControladorRequerimientosReto4 controlador = new ControladorRequerimientosReto4();
+
+    //Atributos de la interfaz
+    private JButton btnRequerimiento1;
+    private JButton btnRequerimiento2;
+    private JButton btnRequerimiento3;
+
+    //Método que genere la ventana
+    //Alternativas  -> Constructor
+    //              -> Método
+
+    public void iniciarGUI(){
+
+        //Título
+        //super.setTitle("Menú Inicial Requerimientos");
+        setTitle("Menú Inicial Requerimientos");
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
+
+        //Crear (instanciar) los componentes        
+        btnRequerimiento1 = new JButton("Materiales Más Comprados");
+        btnRequerimiento1.addActionListener(controlador);//Quién nos escucha
+        btnRequerimiento1.setActionCommand("requerimiento1"); //Qué decimos con este botón
+        
+        btnRequerimiento2 = new JButton("Ranking Proyectos Granito");
+        btnRequerimiento2.addActionListener(controlador);//Quién nos escucha
+        btnRequerimiento2.setActionCommand("requerimiento2");//Qué decimos con este botón
+
+        btnRequerimiento3 = new JButton("Cargos Liderando Menos");
+        btnRequerimiento3.addActionListener(controlador);//Quién nos escucha
+        btnRequerimiento3.setActionCommand("requerimiento3");//Qué decimos con este botón
+
+        //Añadir los componentes a contenedores o contenendores intermedios
+        
+        //Contenedor intermedio
+        JPanel panel = new JPanel();
+        panel.add(btnRequerimiento1);
+        panel.add(btnRequerimiento2);
+        panel.add(btnRequerimiento3);
+
+        //Contenedor intermedio a la ventana
+        getContentPane().add(panel);      
+
+        //Establecer últimas propiedades del frame
+        setSize(800,200);
+        setLocationRelativeTo(null);
+        setVisible(true);
+
+    } 
+
+
 
     public static void requerimiento3(){
 
@@ -38,23 +92,6 @@ public class VistaRequerimientosReto4 {
         }catch(SQLException e){
             System.err.println("Ha ocurrido un error!"+e.getMessage());
         }
-
-    } 
-
-    public static void requerimiento3b(ArrayList<MaterialNacional> rankingMaterialesNacionales){
-
-        System.out.println("-----Materiales Producción Nacional Más Comprados-------");       
-        
-        //Encabezado del resultado
-        System.out.println("Nombre_Material Importado No_Compras");
-        
-        for (MaterialNacional materialNacional : rankingMaterialesNacionales) {
-            System.out.printf("%s %s %d %n",
-                materialNacional.getNombreMaterial(),
-                materialNacional.getImportado(),
-                materialNacional.getNoCompras()
-            );                
-        }        
 
     } 
     
