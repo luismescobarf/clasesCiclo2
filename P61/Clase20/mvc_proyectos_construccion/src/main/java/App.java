@@ -3,6 +3,7 @@ import java.sql.Connection;
 import java.sql.SQLException;
 //import view.MenuLider;
 import view.VistaRequerimientosReto4;
+import controller.ControladorRequerimientosReto4;
 
 /**
  * Aplicación Proyectos Construcción
@@ -10,18 +11,22 @@ import view.VistaRequerimientosReto4;
  */
 public class App {
     public static void main( String[] args ) {  
+
+        //Inicio de la aplicación con GUI
+        ControladorRequerimientosReto4 controlador = new ControladorRequerimientosReto4();
+        controlador.iniciarAplicacion();
         
-        //Requerimiento 1 - Reto3
-        VistaRequerimientosReto4.requerimiento1();
-        System.out.println();
+        // //Requerimiento 1 - Reto3
+        // VistaRequerimientosReto4.requerimiento1();
+        // System.out.println();
 
-        //Requerimiento 3 - Reto3
-        VistaRequerimientosReto4.requerimiento3();
-        System.out.println();
+        // //Requerimiento 3 - Reto3
+        // VistaRequerimientosReto4.requerimiento3();
+        // System.out.println();
 
-        //Requerimiento 5 - Reto3
-        VistaRequerimientosReto4.requerimiento5();
-        System.out.println();     
+        // //Requerimiento 5 - Reto3
+        // VistaRequerimientosReto4.requerimiento5();
+        // System.out.println();     
 
         // //Intentar conectarnos a la base de datos
         // try(Connection conexion = JDBCUtilities.getConnection()){
