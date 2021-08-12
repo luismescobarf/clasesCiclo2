@@ -21,6 +21,7 @@ import model.dao.MaterialRankeadoComprasDao;
 import view.MenuPrincipalGUI;
 import view.Requerimiento1_GUI;
 import view.Requerimiento2_GUI;
+import view.Requerimiento3_GUI;
 
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
@@ -36,6 +37,7 @@ public class ControladorRequerimientosReto4 implements ActionListener {
     private final MenuPrincipalGUI menuPrincipalGUI;
     private Requerimiento1_GUI requerimiento1_GUI;
     private Requerimiento2_GUI requerimiento2_GUI;
+    private Requerimiento3_GUI requerimiento3_GUI;
 
     //Constructor
     public ControladorRequerimientosReto4(){
@@ -100,12 +102,19 @@ public class ControladorRequerimientosReto4 implements ActionListener {
             break;
 
             case "rankingMaterialesImportados":
-                System.out.println("--Interfaz mAtErIales en construcción!");
+                //System.out.println("--Interfaz mAtErIales en construcción!");
+                try{
+                    ArrayList<MaterialRankeadoCompras> materiales = new ArrayList<MaterialRankeadoCompras>();
+                    materiales = this.materialRankeadoComprasDao.rankingMaterialesComprasDescendente();
+                    this.requerimiento3_GUI = new Requerimiento3_GUI(materiales);
+                }catch(SQLException eMateriales){
+                    System.err.println("Error cargando rq3 en la ventana!! "+eMateriales);
+                }
             break;
 
         }
 
     }
-
     
 }
+
