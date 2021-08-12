@@ -30,6 +30,7 @@ public class MenuRequerimientosGUI extends JFrame {
     private JButton btnRequerimiento1;
     private JButton btnRequerimiento2;
     private JButton btnRequerimiento3;
+    private JButton btnCRUD_Materiales;
 
     //Método que genere la ventana
     //Alternativas  -> Constructor
@@ -49,6 +50,7 @@ public class MenuRequerimientosGUI extends JFrame {
         btnRequerimiento1.setActionCommand("requerimiento1"); //Qué decimos con este botón
         
         btnRequerimiento2 = new JButton("Ranking Proyectos Granito");
+        btnRequerimiento2.setFont(new Font("Dialog", Font.PLAIN, 24));
         btnRequerimiento2.addActionListener(controlador);//Quién nos escucha
         btnRequerimiento2.setActionCommand("requerimiento2");//Qué decimos con este botón
 
@@ -58,24 +60,36 @@ public class MenuRequerimientosGUI extends JFrame {
         icono = new ImageIcon( img.getScaledInstance(50, 50, java.awt.Image.SCALE_SMOOTH) );
 
         btnRequerimiento3 = new JButton(icono);
+        btnRequerimiento3.setFont(new Font("Dialog", Font.PLAIN, 24));
         btnRequerimiento3.setText("Cargos Liderando Menos");
         btnRequerimiento3.addActionListener(controlador);//Quién nos escucha
         btnRequerimiento3.setActionCommand("requerimiento3");//Qué decimos con este botón
+
+        ImageIcon icono2 = new ImageIcon("img/editar.png");
+        Image img2 = icono2.getImage();
+        icono2 = new ImageIcon( img2.getScaledInstance(64, 64, java.awt.Image.SCALE_SMOOTH) );
+        
+        btnCRUD_Materiales = new JButton(icono2);
+        btnCRUD_Materiales.setFont(new Font("Dialog", Font.PLAIN, 24));
+        btnCRUD_Materiales.setText("CRUD Materiales");
+        btnCRUD_Materiales.addActionListener(controlador);//Quién nos escucha
+        btnCRUD_Materiales.setActionCommand("crudMateriales");//Qué decimos con este botón
 
         //Añadir los componentes a contenedores o contenendores intermedios
         
         //Contenedor intermedio
         JPanel panel = new JPanel();
-        panel.setLayout(new GridLayout(3,1));
+        panel.setLayout(new GridLayout(4,1));
         panel.add(btnRequerimiento1);
         panel.add(btnRequerimiento2);
         panel.add(btnRequerimiento3);
+        panel.add(btnCRUD_Materiales);
 
         //Contenedor intermedio a la ventana
         getContentPane().add(panel);      
 
         //Establecer últimas propiedades del frame
-        setSize(400,400);
+        setSize(600,400);
         setLocationRelativeTo(null);
         setVisible(true);
 

@@ -12,7 +12,8 @@ import java.sql.SQLException;
 public class JDBCUtilities {
 
     //Ubicación de la base de datos
-    private static final String UBICACION_BD = "/Users/luismiguelescobarfalcon/Dropbox/MisionTIC2022/Ciclo2/repositorioClasesCiclo2/P45/Clase15/mvc_proyectos_construccion/ProyectosConstruccion.db";    
+    //private static final String UBICACION_BD = "/Users/luismiguelescobarfalcon/Dropbox/MisionTIC2022/Ciclo2/repositorioClasesCiclo2/P45/Clase15/mvc_proyectos_construccion/ProyectosConstruccion.db";    
+    private static final String UBICACION_BD = "resources/ProyectosConstruccion.db";    
 
     //Construir conexión con la base de datos
     public static Connection getConnection() throws SQLException {        
