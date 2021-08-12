@@ -19,6 +19,8 @@ import model.dao.MaterialRankeadoComprasDao;
 
 //View
 import view.MenuPrincipalGUI;
+import view.Requerimiento1_GUI;
+
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
@@ -31,6 +33,7 @@ public class ControladorRequerimientosReto4 implements ActionListener {
     
     //Alojar objetos de la vista
     private final MenuPrincipalGUI menuPrincipalGUI;
+    private Requerimiento1_GUI requerimiento1_GUI;
 
     //Constructor
     public ControladorRequerimientosReto4(){
@@ -73,7 +76,14 @@ public class ControladorRequerimientosReto4 implements ActionListener {
         switch(actionCommand){
 
             case "rankingProyectos":
-                System.out.println("()()()Interfaz Proyectos en construcción!");
+                //System.out.println("()()()Interfaz Proyectos en construcción!");                
+                try{
+                    ArrayList<ProyectoRankeadoCompras> proyectos = new ArrayList<ProyectoRankeadoCompras>();
+                    proyectos = this.proyectoRankeadoComprasDao.rankingProyectosComprasDescendente10();
+                    this.requerimiento1_GUI = new Requerimiento1_GUI(proyectos, this);
+                }catch(SQLException eProyectosCompras){
+                    System.err.println("Error cargando rq1 en la ventana!! "+eProyectosCompras);
+                }
             break;
 
             case "rankingBancos":
