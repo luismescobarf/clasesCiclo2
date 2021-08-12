@@ -20,6 +20,7 @@ import model.dao.MaterialRankeadoComprasDao;
 //View
 import view.MenuPrincipalGUI;
 import view.Requerimiento1_GUI;
+import view.Requerimiento2_GUI;
 
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
@@ -34,6 +35,7 @@ public class ControladorRequerimientosReto4 implements ActionListener {
     //Alojar objetos de la vista
     private final MenuPrincipalGUI menuPrincipalGUI;
     private Requerimiento1_GUI requerimiento1_GUI;
+    private Requerimiento2_GUI requerimiento2_GUI;
 
     //Constructor
     public ControladorRequerimientosReto4(){
@@ -80,14 +82,21 @@ public class ControladorRequerimientosReto4 implements ActionListener {
                 try{
                     ArrayList<ProyectoRankeadoCompras> proyectos = new ArrayList<ProyectoRankeadoCompras>();
                     proyectos = this.proyectoRankeadoComprasDao.rankingProyectosComprasDescendente10();
-                    this.requerimiento1_GUI = new Requerimiento1_GUI(proyectos, this);
+                    this.requerimiento1_GUI = new Requerimiento1_GUI(proyectos);
                 }catch(SQLException eProyectosCompras){
                     System.err.println("Error cargando rq1 en la ventana!! "+eProyectosCompras);
                 }
             break;
 
             case "rankingBancos":
-                System.out.println("$$$Interfaz BANCOS en construcción!");
+                //System.out.println("$$$Interfaz BANCOS en construcción!");
+                try{
+                    ArrayList<BancoRankeadoAreaPromedio> bancos = new ArrayList<BancoRankeadoAreaPromedio>();
+                    bancos = this.bancoRankeadoAreaPromedioDao.rankingBancosAreaPromedioDescendente();
+                    this.requerimiento2_GUI = new Requerimiento2_GUI(bancos);
+                }catch(SQLException eBancosArea){
+                    System.err.println("Error cargando rq2 en la ventana!! "+eBancosArea);
+                }
             break;
 
             case "rankingMaterialesImportados":
