@@ -15,6 +15,7 @@ import java.util.ArrayList;
 import view.MenuRequerimientosGUI;
 import view.Requerimiento1GUI;
 import view.Requerimiento2GUI;
+import view.Requerimiento3GUI;
 
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
@@ -30,6 +31,7 @@ public class ControladorRequerimientosReto4 implements ActionListener {
     private MenuRequerimientosGUI menuRequerimientosGUI;
     private Requerimiento1GUI requerimiento1gui;
     private Requerimiento2GUI requerimiento2gui;
+    private Requerimiento3GUI requerimiento3gui;
 
     public ControladorRequerimientosReto4(){
         this.materialNacionalDao = new MaterialNacionalDao();
@@ -72,7 +74,7 @@ public class ControladorRequerimientosReto4 implements ActionListener {
                 }                
             break;
             case "requerimiento2":
-                System.out.println("Requerimiento 2 en construcción!"); 
+                //System.out.println("Requerimiento 2 en construcción!"); 
                 //System.out.println("Requerimiento 1 en construcción!");                
                 try{
                     //VistaRequerimientosReto4.requerimiento3b(this.consultarMaterialesNacionalesComprados());    
@@ -83,7 +85,13 @@ public class ControladorRequerimientosReto4 implements ActionListener {
                 }  
             break;
             case "requerimiento3":
-                System.out.println("Requerimiento 3 en construcción!");
+                //System.out.println("Requerimiento 3 en construcción!");
+                try{                    
+                    this.requerimiento3gui = new Requerimiento3GUI( this.consultarCargosMenosAsignados(), 
+                                                                        this);                    
+                    }catch(SQLException excepcion){
+                        System.err.println("Problemas consultando req3: " + excepcion);
+                    } 
             break;
 
         }
