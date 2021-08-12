@@ -4,11 +4,13 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 import javax.swing.JButton;
+import javax.swing.JOptionPane;
 
 //Model
 
 //Requerimiento 3
 import model.vo.BancoRankeadoAreaPromedio;
+import model.vo.MaterialConstruccion;
 import model.dao.BancoRankeadoAreaPromedioDao;
 //Requerimiento 1
 import model.vo.ProyectoRankeadoCompras;
@@ -17,11 +19,15 @@ import model.dao.ProyectoRankeadoComprasDao;
 import model.vo.MaterialRankeadoCompras;
 import model.dao.MaterialRankeadoComprasDao;
 
+import model.vo.MaterialConstruccion;
+import model.dao.MaterialConstruccionDao;
+
 //View
 import view.MenuPrincipalGUI;
 import view.Requerimiento1_GUI;
 import view.Requerimiento2_GUI;
 import view.Requerimiento3_GUI;
+import view.CRUD_Materiales_GUI;
 
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
@@ -32,12 +38,14 @@ public class ControladorRequerimientosReto4 implements ActionListener {
     private final ProyectoRankeadoComprasDao proyectoRankeadoComprasDao;
     private final BancoRankeadoAreaPromedioDao bancoRankeadoAreaPromedioDao;
     private final MaterialRankeadoComprasDao materialRankeadoComprasDao; 
+    private final MaterialConstruccionDao materialConstruccionDao;
     
     //Alojar objetos de la vista
     private final MenuPrincipalGUI menuPrincipalGUI;
     private Requerimiento1_GUI requerimiento1_GUI;
     private Requerimiento2_GUI requerimiento2_GUI;
     private Requerimiento3_GUI requerimiento3_GUI;
+    private CRUD_Materiales_GUI crud_Materiales_GUI;
 
     //Constructor
     public ControladorRequerimientosReto4(){
@@ -45,6 +53,7 @@ public class ControladorRequerimientosReto4 implements ActionListener {
         this.proyectoRankeadoComprasDao = new ProyectoRankeadoComprasDao();
         this.bancoRankeadoAreaPromedioDao = new BancoRankeadoAreaPromedioDao();        
         this.materialRankeadoComprasDao = new MaterialRankeadoComprasDao();
+        this.materialConstruccionDao = new MaterialConstruccionDao();
         //Instanciamos las interfaces
         this.menuPrincipalGUI = new MenuPrincipalGUI();
     }    
@@ -111,6 +120,22 @@ public class ControladorRequerimientosReto4 implements ActionListener {
                     System.err.println("Error cargando rq3 en la ventana!! "+eMateriales);
                 }
             break;
+
+            case "crudMateriales":
+                // JOptionPane.showMessageDialog(  this.menuPrincipalGUI, 
+                //                                 "CRUD Materiales en Construcción!", 
+                //                                 "SW", 
+                //                                 JOptionPane.INFORMATION_MESSAGE);
+
+                try{
+                    ArrayList<MaterialConstruccion> materiales = new ArrayList<MaterialConstruccion>();
+                    materiales = this.materialConstruccionDao.consultarTodos();
+                    this.crud_Materiales_GUI = new CRUD_Materiales_GUI(materiales,this);                    
+                }catch(SQLException eMaterialesCRUD){
+                    System.err.println("Error cargando materiales de construcción (CRUD)!! "+eMaterialesCRUD);
+                }                
+
+                break;
 
         }
 

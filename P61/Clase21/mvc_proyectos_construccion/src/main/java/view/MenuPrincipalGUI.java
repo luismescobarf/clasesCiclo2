@@ -15,6 +15,7 @@ public class MenuPrincipalGUI extends JFrame {
     private JButton btnRequerimiento1;
     private JButton btnRequerimiento2;
     private JButton btnRequerimiento3;
+    private JButton btnCRUD_Materiales;
 
     //Constructor realizar la composición de la ventana
     public MenuPrincipalGUI(){
@@ -31,7 +32,7 @@ public class MenuPrincipalGUI extends JFrame {
     public void iniciarGUI(ControladorRequerimientosReto4 controlador){
         
         //Propiedades del frame
-        setTitle("Menú Principal Reto 5");
+        setTitle("Menú Principal Reto 5 / CRUD");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
 
         //Agregar componentes
@@ -52,14 +53,19 @@ public class MenuPrincipalGUI extends JFrame {
         btnRequerimiento3.addActionListener(controlador);        
         btnRequerimiento3.setActionCommand("rankingMaterialesImportados");  
         
+        btnCRUD_Materiales = new JButton(redimensionarIcono(new ImageIcon("img/editar.png"), 64));
+        btnCRUD_Materiales.setText("Gestión Materiales"); 
+        btnCRUD_Materiales.addActionListener(controlador);        
+        btnCRUD_Materiales.setActionCommand("crudMateriales");       
 
         //Asociar los componentes al componente intermedio o al contenedor
         
         //Componente intermedio
-        JPanel panel = new JPanel(new GridLayout(3,1));
+        JPanel panel = new JPanel(new GridLayout(4,1));
         panel.add(btnRequerimiento1);
         panel.add(btnRequerimiento2);
         panel.add(btnRequerimiento3);
+        panel.add(btnCRUD_Materiales);
         
         //Contenedor
         getContentPane().add(panel);        
