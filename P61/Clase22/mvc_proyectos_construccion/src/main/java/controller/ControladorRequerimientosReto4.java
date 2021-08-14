@@ -241,13 +241,120 @@ public class ControladorRequerimientosReto4 implements ActionListener {
 
             break;
 
-            case "eliminarMaterial":
+            case "actualizarMaterial":
+
+                //Cargar la información de la fila que ha sido seleccionada en un VO
+                int[] filasSeleccionadas = crud_Materiales_GUI.getJtMateriales().getSelectedRows();                
+                //int[] columnasSeleccionadas = crud_Materiales_GUI.getJtMateriales().getSelectedColumns();
+                MaterialConstruccion materialActualizar = new MaterialConstruccion();
+                ArrayList<String> filaIntermedia = new ArrayList<String>();
+                int numeroColumnas = crud_Materiales_GUI.getModeloTablaMateriales().getColumnCount();
+                for (int j = 0; j < numeroColumnas; j++) {
+                    filaIntermedia.add((String)crud_Materiales_GUI.getJtMateriales().getValueAt(filasSeleccionadas[0], j) );                   
+                }
+                materialActualizar.setIdMaterialConstruccion(Integer.valueOf(filaIntermedia.get(0)));
+                materialActualizar.setNombreMaterial(filaIntermedia.get(1));
+                materialActualizar.setImportado(filaIntermedia.get(2));
+                materialActualizar.setPrecioUnidad(Integer.valueOf(filaIntermedia.get(3)));
+
+                //Actualizar utilizando el Value Object correspondiente
+                //Solicitar al modelo la adición del nuevo material
+                MaterialConstruccion materialActualizado = null;
+                try{
+                    materialActualizado = materialConstruccionDao.actualizarMaterial(materialActualizar);
+                }catch(SQLException eMaterialActualizado){
+                    JOptionPane.showMessageDialog(
+                        crud_Materiales_GUI, 
+                        "Error actualizando material!!", 
+                        "Error BD", 
+                        JOptionPane.ERROR_MESSAGE
+                        );
+                }
+
+                //Reportar éxito 
+                if(materialActualizado != null){
+                    JOptionPane.showMessageDialog(
+                        crud_Materiales_GUI, 
+                        "Actualización exitosa!!", 
+                        "Transacción Completa BD", 
+                        JOptionPane.INFORMATION_MESSAGE
+                        );
+                }
                 
             break;
 
-            case "actualizarMaterial":
+            case "borrarMaterial":
+
+                //Cargar la información de la fila que ha sido seleccionada en un VO
+                int[] filasSeleccionadasEliminar = crud_Materiales_GUI.getJtMateriales().getSelectedRows();                
+                //int[] columnasSeleccionadas = crud_Materiales_GUI.getJtMateriales().getSelectedColumns();
+                MaterialConstruccion materialEliminar = new MaterialConstruccion();
+                ArrayList<String> filaIntermediaEliminar = new ArrayList<String>();                
+                for (int j = 0; j < crud_Materiales_GUI.getModeloTablaMateriales().getColumnCount(); j++) {
+                    filaIntermediaEliminar.add((String)crud_Materiales_GUI.getJtMateriales().getValueAt(filasSeleccionadasEliminar[0], j) );                   
+                }
+                materialEliminar.setIdMaterialConstruccion(Integer.valueOf(filaIntermediaEliminar.get(0)));
+                materialEliminar.setNombreMaterial(filaIntermediaEliminar.get(1));
+                materialEliminar.setImportado(filaIntermediaEliminar.get(2));
+                materialEliminar.setPrecioUnidad(Integer.valueOf(filaIntermediaEliminar.get(3)));
+
+                //Eliminar utilizando el Value Object correspondiente
+                //Solicitar al modelo la adición del nuevo material
+                MaterialConstruccion materialEliminado = null;
+                try{
+                    materialEliminar.mostrarMaterialConsola();
+                    materialEliminado = materialConstruccionDao.eliminarMaterial(materialEliminar);
+                }catch(SQLException eMaterialActualizado){
+                    JOptionPane.showMessageDialog(
+                        crud_Materiales_GUI, 
+                        "Error actualizando material!!", 
+                        "Error BD", 
+                        JOptionPane.ERROR_MESSAGE
+                        );
+                }
+
+                //Reportar éxito 
+                if(materialEliminado != null){
+                    JOptionPane.showMessageDialog(
+                        crud_Materiales_GUI, 
+                        "Eliminación exitosa!!", 
+                        "Transacción Completa BD", 
+                        JOptionPane.INFORMATION_MESSAGE
+                        );
+                    
+                    //Versión 2 (Actualizando la tabla)
+
+                    //Limpiar todos los materiales
+                    while(crud_Materiales_GUI.getModeloTablaMateriales().getRowCount() > 0){
+                        crud_Materiales_GUI.getModeloTablaMateriales().removeRow(0);
+                    }                  
+
+                    //Cargar los materiales de la base de datos (versión actualizada)
+                    try{
+                        for (MaterialConstruccion filaMaterial : materialConstruccionDao.consultarTodos()) {
+                            crud_Materiales_GUI.getModeloTablaMateriales().addRow(
+                                new Object[]{
+                                    String.valueOf(filaMaterial.getIdMaterialConstruccion()),
+                                    filaMaterial.getNombreMaterial(),
+                                    filaMaterial.getImportado(),
+                                    String.valueOf(filaMaterial.getPrecioUnidad())                                                                       
+                                }
+                            );                            
+                        }
+                    }catch(SQLException eReconsultandoMateriales){
+                        JOptionPane.showMessageDialog(
+                            crud_Materiales_GUI, 
+                            "Error consultando todos los materiales para actualizar GUI!!", 
+                            "Error BD", 
+                            JOptionPane.ERROR_MESSAGE
+                            );
+                    }
+                }
+                
                 
             break;
+
+            
 
         }
 

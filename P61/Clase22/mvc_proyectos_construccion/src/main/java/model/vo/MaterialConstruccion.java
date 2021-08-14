@@ -49,7 +49,16 @@ public class MaterialConstruccion {
 
     public void setPrecioUnidad(Integer precioUnidad) {
         this.precioUnidad = precioUnidad;
-    }   
+    }  
+    
+    public void mostrarMaterialConsola(){
+        System.out.println("----Info Material----");
+        System.out.println("ID: "+this.idMaterialConstruccion);
+        System.out.println("Nombre Material: "+this.nombreMaterial);
+        System.out.println("Importado: "+this.importado);
+        System.out.println("Precio Unitario: "+this.precioUnidad);
+        System.out.println("---------------------");        
+    }
     
     
 }
